@@ -1,0 +1,268 @@
+{
+  "slug": "inspecao-url",
+  "num": 3,
+  "menu": "Inspection",
+  "titulo": "URL Inspection: indexed, discovered, unknown",
+  "titulo_curto": "URL Inspection",
+  "minutos": 17,
+  "lead": "Before you measure clicks, confirm the page is in the index. The Search Console URL Inspection tells you, page by page, whether Google knows it, crawled it, indexed it, and which address it chose as the official one. Each state calls for a different action. In this lesson you build the list of your key URLs and read the state of each one.",
+  "objetivo": "read the state of each key URL in the inspection and pick the right action for each state.",
+  "competencias": [
+    "inspecionar-urls-chave",
+    "diagnosticar-estado-de-indexacao",
+    "escolher-acao-por-estado"
+  ],
+  "aprende": [
+    {
+      "t": "The four states that matter"
+    },
+    {
+      "t": "The right action for each state"
+    },
+    {
+      "t": "Why a batch of thin pages doesn't get in"
+    },
+    {
+      "t": "Build and check the list of key URLs"
+    }
+  ],
+  "hero_alt": "A quality inspector examines box labels with a magnifying glass, a clipboard in the other hand.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From unknown to indexed",
+      "sub": "Click each state to see the action.",
+      "estilo": "escada",
+      "nos": [
+        {
+          "icone": "x",
+          "titulo": "Unknown",
+          "sub": "URL is unknown to Google",
+          "detalhe": "No link or sitemap led Google to it. Action: an internal link from a page that's already indexed, the URL in the sitemap, and \"Request indexing\" in the dashboard."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Discovered",
+          "sub": "currently not indexed",
+          "detalhe": "Google knows the page exists, but hasn't even crawled it. This is often a sign of many similar pages published at once, or of low perceived value. Action: give it its own body text, add internal links, publish at a slower pace."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Crawled",
+          "sub": "currently not indexed",
+          "detalhe": "Google read the page and decided not to keep it. Action: compare it with the similar pages on your site; improve what only this page has, or take it out of the index (noindex) until it has a body."
+        },
+        {
+          "icone": "check",
+          "titulo": "Indexed",
+          "sub": "submitted and indexed",
+          "forte": true,
+          "detalhe": "It's in the index. You still need to check the canonical Google chose: if it's a different address, go back to course 1, lesson 4."
+        }
+      ],
+      "legenda": "URL Inspection doesn't move a page up a step on its own. It tells you which step the page is on and what's missing."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The key URL list and how to read it",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "The list",
+          "sub": "10 to 15 URLs",
+          "texto": [
+            "Pick the pages that need to be in the index: home, topic pages, catalog, new pages of the month.",
+            "Save them in a file called urls-chave.txt. It's the same list every week."
+          ]
+        },
+        {
+          "titulo": "The inspection",
+          "sub": "dashboard or script",
+          "texto": [
+            "In Search Console, paste each URL into the inspection bar. Write down the status, the date of the last crawl, and Google's canonical.",
+            "gsc_inspecionar.py does the same in batch, with credentials. The API is read-only: \"Request indexing\" is still a click in the dashboard."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "On 10/05/2026, 12 of 14 key URLs were indexed. On 10/13, 13 of 14. /eventos/ was missing, \"unknown to Google\"."
+          }
+        },
+        {
+          "titulo": "The batch that doesn't get in",
+          "sub": "discovered, not indexed",
+          "texto": [
+            "Many similar pages published at once often get stuck at \"discovered\".",
+            "Before you ask for indexing again, compare the pages with each other."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (09/23/2026)",
+            "texto": "283 course pages were published in a single commit. Of a sample of 6, 5 were discovered and never crawled. Each page had 170 to 240 words, two randomly picked pages shared 47% of their vocabulary, the FAQ was identical, and the description was copied."
+          }
+        },
+        {
+          "titulo": "The link that disappeared",
+          "sub": "a status that gets worse",
+          "texto": [
+            "If an indexed page falls out again, look for what changed in the internal links.",
+            "A page with no server-rendered link becomes an orphan for the search engine."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (09/30/2026)",
+            "texto": "The /cursos/ page became \"search only\" and the 310 course pages lost their only server-rendered internal link. The fix was a collapsed index, with no visual change."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The list, the command, and the log",
+      "sub": "Replace what's between < > with your own. The command needs a Google credential; without one, inspect in the dashboard.",
+      "blocos": [
+        {
+          "rot": "urls-chave.txt (one per line)",
+          "icone": "arquivo",
+          "conteudo": "https://www.<seusite.com>/\nhttps://www.<seusite.com>/<pagina-de-assunto>/\nhttps://www.<seusite.com>/<catalogo>/\nhttps://www.<seusite.com>/<pagina-nova>/"
+        },
+        {
+          "rot": "Terminal · batch inspection (gsc_inspecionar.py)",
+          "icone": "terminal",
+          "conteudo": "export GSC_QUOTA_PROJ=\"<projeto-da-cota>\"\npython3 tools/gsc_inspecionar.py sc-domain:<seusite.com> $(cat urls-chave.txt)"
+        },
+        {
+          "rot": "Weekly log (template)",
+          "icone": "lista",
+          "conteudo": "| URL | status | last crawl | Google's canonical | action |\n|---|---|---|---|---|\n| </pagina/> | <Submitted and indexed> | <yyyy-mm-dd> | <same> | <none> |\n| </outra/> | <URL is unknown to Google> | - | - | <internal link + sitemap + request indexing> |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "INEMA inspection (10/13/2026)",
+            "html": "<table><tr><th>URL</th><th>status</th><th>crawl</th></tr><tr><td>/</td><td>Submitted and indexed</td><td>2026-10-12</td></tr><tr><td>/aprender-inteligencia-artificial/</td><td>Submitted and indexed</td><td>2026-10-10</td></tr><tr><td>/es/aprender-inteligencia-artificial/</td><td>Submitted and indexed</td><td>2026-10-03</td></tr><tr><td>/cursos/</td><td>Submitted and indexed</td><td>2026-10-12</td></tr><tr><td>/eventos/</td><td>URL is unknown to Google</td><td>-</td></tr></table><p>5 of the 14 rows in the weekly report. Indexed: 13 of 14.</p>"
+          },
+          {
+            "rot": "Script output format",
+            "html": "<pre>https://www.seusite.com/pagina/\n   Enviada e indexada | rastreio 2026-10-13 | canônico Google https://www.seusite.com/pagina/</pre><p>Format simulation: status, date of the last crawl, and the canonical Google chose.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your key URLs",
+      "sub": "Start with the dashboard; the script is optional.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · The list",
+          "min": "15 min",
+          "texto": "Write urls-chave.txt with 10 URLs that must be in the index, all returning 200.",
+          "pronto": "the file has 10 URLs from the same domain, one per line, and each one opens without errors."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · The log with an action",
+          "min": "40 min",
+          "texto": "Inspect the 10 URLs and fill in the log. For each one that is not indexed, write the action from the diagram.",
+          "pronto": "the log has 10 rows with status, crawl date, and Google canonical, and every non-indexed row has a written action."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "A page shows up as \"Discovered – currently not indexed\". What does that mean?",
+          "opcoes": [
+            "Google read it and turned it down.",
+            "Google knows it exists, but hasn't crawled it yet.",
+            "It's indexed.",
+            "The site is blocked."
+          ],
+          "certa": 1,
+          "explica": "Discovered comes before the crawl. Crawled – currently not indexed comes after: Google read it and chose not to keep it.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "A batch of 283 similar pages doesn't make it into the index. What's the first action?",
+          "opcoes": [
+            "Request indexing for all of them again.",
+            "Compare the pages with each other: length, repeated vocabulary, copied text.",
+            "Publish 283 more.",
+            "Buy an indexer."
+          ],
+          "certa": 1,
+          "explica": "At INEMA, the profile pages were 170 to 240 words long, and two picked at random shared 47% of their vocabulary. The problem was the batch, not the request.",
+          "ref": "passos"
+        },
+        {
+          "p": "Where does a URL that is \"unknown to Google\" go?",
+          "opcoes": [
+            "To noindex.",
+            "To an internal link from an indexed page, the sitemap, and \"Request indexing\".",
+            "To robots.txt.",
+            "To the trash."
+          ],
+          "certa": 1,
+          "explica": "Unknown means there's no path: no link or sitemap led Google to it.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Can the gsc_inspecionar.py script request indexing?",
+          "opcoes": [
+            "Yes, that's what it's for.",
+            "No: the API is read-only; the request is a click in the dashboard.",
+            "Only for job posting pages.",
+            "Only with a paid key."
+          ],
+          "certa": 1,
+          "explica": "The script reads status, crawl, and canonical. The \"Request indexing\" button only exists in the dashboard.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "Four states",
+          "texto": "Unknown, discovered, crawled, and indexed. Each one has its own action."
+        },
+        {
+          "t": "A thin batch doesn't get in",
+          "texto": "Before you ask again, compare the pages with each other."
+        },
+        {
+          "t": "Same list every week",
+          "texto": "The urls-chave.txt shows when a state gets better or worse."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "gsc_inspecionar.py on GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/gsc_inspecionar.py",
+          "icone": "terminal"
+        },
+        {
+          "t": "URL Inspection (Google Help)",
+          "href": "https://support.google.com/webmasters/answer/9012289",
+          "icone": "lupa"
+        },
+        {
+          "t": "Course 1, lesson 7: a thin page leaves the index",
+          "href": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/aulas/pagina-rasa/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

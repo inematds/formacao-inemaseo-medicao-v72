@@ -1,0 +1,254 @@
+{
+  "slug": "linha-de-base",
+  "num": 1,
+  "menu": "Base",
+  "titulo": "Baseline: why almost every click is branded",
+  "titulo_curto": "Baseline",
+  "minutos": 15,
+  "lead": "The total clicks in Search Console are misleading. At the start, almost every click comes from people who already typed your name. That click is good, but it doesn't show whether your SEO works. In this lesson you pull a 28-day baseline and separate the brand from the rest, as INEMA did in September 2026.",
+  "objetivo": "pull the 28-day baseline and separate how many clicks come from people who already search for your name.",
+  "competencias": [
+    "tirar-linha-de-base",
+    "separar-marca-de-sem-marca",
+    "ler-consultas-anonimas"
+  ],
+  "aprende": [
+    {
+      "t": "Why the total clicks are misleading"
+    },
+    {
+      "t": "The three buckets: branded, non-branded, and anonymized"
+    },
+    {
+      "t": "Write your brand regex in the dashboard filter"
+    },
+    {
+      "t": "Record the baseline to compare a month from now"
+    }
+  ],
+  "hero_alt": "A woman draws a horizontal line in pencil on graph paper, next to a laptop showing a bar chart.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "The total splits into three",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Total",
+          "sub": "the number on the dashboard",
+          "detalhe": "Clicks and impressions from the Performance report, Web tab. It's the sum of everything: people who searched for your name, people who searched for a topic, and the queries Google hides."
+        },
+        {
+          "icone": "marca",
+          "titulo": "Branded",
+          "sub": "people who already know you",
+          "detalhe": "Queries with your name, your site's name, or typos of it. These visitors were already looking for you: the click would come with or without SEO."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Non-branded",
+          "sub": "the number that matters",
+          "forte": true,
+          "detalhe": "Topic queries (\"free ai course\", \"how to learn ai\"). This is where people who didn't know you found you. It's the number that shows whether SEO is working."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Anonymized",
+          "sub": "what Google hides",
+          "detalhe": "Rare queries don't appear in the table, for privacy, but they count toward the total. That's why the total isn't equal to branded plus non-branded: the difference is the anonymized queries."
+        }
+      ],
+      "legenda": "Total minus branded minus non-branded gives you the anonymized queries. Write down all three numbers, not just the total."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The baseline in four steps",
+      "sub": "All in the dashboard, no script. Click each step.",
+      "passos": [
+        {
+          "titulo": "The window",
+          "sub": "28 days",
+          "texto": [
+            "In Search Console, open Performance, Search results. Choose the last 28 days and check clicks, impressions, CTR, and position.",
+            "Write down the total. It's the starting point, not the result."
+          ]
+        },
+        {
+          "titulo": "The brand",
+          "sub": "one regex",
+          "texto": [
+            "Write your brand regex: the name, the domain, variations, and typos, separated by a vertical bar.",
+            "In the Query filter, choose the custom (regex) option and \"matches\". Write down clicks and impressions."
+          ]
+        },
+        {
+          "titulo": "The rest",
+          "sub": "non-branded",
+          "texto": [
+            "Switch the filter to \"doesn't match\" the same regex. Write it down again.",
+            "Add branded and non-branded and subtract from the total: what's left is the anonymized queries."
+          ]
+        },
+        {
+          "titulo": "The record",
+          "sub": "date and numbers",
+          "texto": [
+            "Save the numbers in a spreadsheet with the date of the window. Four weeks from now, you compare the same 28-day window.",
+            "Without the record, improvement becomes a personal impression."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (baseline from 08/25 to 09/21/2026)",
+            "texto": "inema.club had 787 clicks and a 34% CTR. It looked great. But 639 of the 647 clicks from the top searches were branded; non-branded searches added up to just 8 clicks and 72 impressions."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The regex and the spreadsheet",
+      "sub": "Replace what is between < > with your own.",
+      "blocos": [
+        {
+          "rot": "Brand regex (Query filter, custom regex)",
+          "icone": "lupa",
+          "conteudo": "<yourname>|<yoursite>|<your site>|<common typo>\n\n# INEMA example: any search that contains the word\ninema"
+        },
+        {
+          "rot": "Baseline spreadsheet (template)",
+          "icone": "lista",
+          "conteudo": "| window | total (clicks/impr.) | branded | non-branded | anonymized | CTR | position |\n|---|---|---|---|---|---|---|\n| <dd/mm> to <dd/mm> | <c>/<i> | <c>/<i> | <c>/<i> | <c>/<i> | <%> | <n> |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "INEMA baseline (report from 09/23/2026)",
+            "html": "<table><tr><th>property</th><th>clicks</th><th>impressions</th><th>CTR</th><th>position</th></tr><tr><td>inema.club</td><td>787</td><td>2,301</td><td>34%</td><td>5.2</td></tr><tr><td>inema.pro</td><td>42</td><td>649</td><td>6.5%</td><td>8.5</td></tr></table><p>28-day window, 08/25 to 09/21/2026. In the top searches, 639 of 647 clicks were branded. Non-branded searches: 8 clicks and 72 impressions.</p>"
+          },
+          {
+            "rot": "How to read it",
+            "html": "<ul><li><b>A 34% CTR</b> is high because people who search for your name click on your own site.</li><li><b>8 non-branded clicks</b> in 28 days: that is your real starting point.</li><li>Goal of the baseline: measure only the non-branded part, because the brand dominates the total and hides the effect of new pages.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your baseline",
+      "sub": "One afternoon, all in the dashboard.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "S1 · The 28-day numbers",
+          "min": "20 min",
+          "texto": "In Search Console, write down clicks, impressions, CTR and position for the last 28 days, along with the window dates.",
+          "pronto": "the spreadsheet has one row with the window dates and the four total numbers."
+        },
+        {
+          "id": "e2",
+          "titulo": "S2 · Branded, non-branded and anonymized",
+          "min": "30 min",
+          "texto": "Write your brand regex, apply \"matches\" and \"doesn't match\", and calculate the anonymized queries.",
+          "pronto": "the row has all three buckets filled in, and branded + non-branded + anonymized adds up to the total."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "Your site has a 34% CTR and an average position of 5.2. Is the SEO working?",
+          "opcoes": [
+            "Yes, a high CTR proves it works.",
+            "You can't tell without separating the brand: people who search for your name click on your site.",
+            "No, a CTR above 30% is an error.",
+            "Only if the position is 1."
+          ],
+          "certa": 1,
+          "explica": "At INEMA, a 34% CTR coexisted with 8 non-branded clicks in 28 days. The total mixes in people who already knew you.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "Why don't branded + non-branded add up to the total?",
+          "opcoes": [
+            "A dashboard error.",
+            "Rare queries are hidden from the table but count in the total: those are the anonymized ones.",
+            "Because Bing adds them in.",
+            "Because the CTR is rounded."
+          ],
+          "certa": 1,
+          "explica": "Google anonymizes rare queries. They count in the total and disappear from the query filter.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What goes in the brand regex?",
+          "opcoes": [
+            "Only the exact domain.",
+            "Name, domain, variations and common typos.",
+            "The words of your topic.",
+            "The names of your competitors."
+          ],
+          "certa": 1,
+          "explica": "Someone who types \"inema clube\" is looking for the brand. If the variation is left out, the brand leaks into the non-branded bucket and inflates the number.",
+          "ref": "codigo"
+        },
+        {
+          "p": "To compare a month from now, what do you need to keep?",
+          "opcoes": [
+            "A screenshot of the chart.",
+            "The window dates and the numbers for the three buckets, from the same 28-day window.",
+            "Just the total clicks.",
+            "Nothing: the dashboard keeps it forever."
+          ],
+          "certa": 1,
+          "explica": "Same window, same buckets. And the dashboard doesn't keep it forever: the history disappears after about 16 months (lesson 8).",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "The total misleads",
+          "texto": "At the start, almost every click comes from people already searching for your name."
+        },
+        {
+          "t": "Three buckets",
+          "texto": "Branded, non-branded, and anonymized. What matters is non-branded."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "The generative AI report in Search Console shows impressions only. The click baseline is still the Performance report."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "inemaSEO method, step 3: measurement that separates the brand",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Search Console: performance report (Google Help)",
+          "href": "https://support.google.com/webmasters/answer/7576553",
+          "icone": "grafico"
+        },
+        {
+          "t": "inemaSEO Area in Eventos",
+          "href": "https://eventos.inema.pro/inemaseo/",
+          "icone": "camadas"
+        }
+      ]
+    }
+  ]
+}

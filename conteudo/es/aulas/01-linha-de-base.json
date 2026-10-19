@@ -1,0 +1,254 @@
+{
+  "slug": "linha-de-base",
+  "num": 1,
+  "menu": "Base",
+  "titulo": "Línea base: por qué casi todo clic es de la marca",
+  "titulo_curto": "Línea base",
+  "minutos": 15,
+  "lead": "El total de clics de Search Console engaña. Al principio, casi todo clic viene de quien ya escribió tu nombre. Ese clic es bueno, pero no muestra si el SEO funciona. En esta clase sacas la línea base de 28 días y separas la marca del resto, como hizo INEMA en septiembre de 2026.",
+  "objetivo": "sacar la línea base de 28 días y separar cuántos de los clics vienen de quien ya busca tu nombre.",
+  "competencias": [
+    "tirar-linha-de-base",
+    "separar-marca-de-sem-marca",
+    "ler-consultas-anonimas"
+  ],
+  "aprende": [
+    {
+      "t": "Por qué el total de clics engaña"
+    },
+    {
+      "t": "Los tres grupos: de marca, sin marca y anónimas"
+    },
+    {
+      "t": "Escribir la regex de tu marca en el filtro del panel"
+    },
+    {
+      "t": "Registrar la base para comparar dentro de un mes"
+    }
+  ],
+  "hero_alt": "Una mujer traza a lápiz una línea horizontal en un papel milimetrado, junto a una laptop con un gráfico de barras.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "El total se divide en tres",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Total",
+          "sub": "el número del panel",
+          "detalhe": "Clics e impresiones del informe de Rendimiento, pestaña Web. Es la suma de todo: quien buscó tu nombre, quien buscó un tema y las consultas que Google oculta."
+        },
+        {
+          "icone": "marca",
+          "titulo": "De marca",
+          "sub": "quien ya te conoce",
+          "detalhe": "Consultas con tu nombre, el nombre del sitio o errores de escritura de él. Ese visitante ya te buscaba: el clic llegaría con o sin SEO."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Sin marca",
+          "sub": "el número que importa",
+          "forte": true,
+          "detalhe": "Consultas de un tema (\"curso de ia gratuito\", \"como aprender ia\"). Aquí está quien no te conocía y te encontró. Es el número que muestra si el SEO está funcionando."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Anónimas",
+          "sub": "lo que Google oculta",
+          "detalhe": "Las consultas raras no aparecen en la tabla, por privacidad, pero entran en el total. Por eso el total no es igual a de marca más sin marca: la diferencia son las anónimas."
+        }
+      ],
+      "legenda": "Total menos de marca menos sin marca da las anónimas. Anota los tres números, no solo el total."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "La línea base en cuatro pasos",
+      "sub": "Todo en el panel, sin script. Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "La ventana",
+          "sub": "28 días",
+          "texto": [
+            "En Search Console, abre Rendimiento, Resultados de búsqueda. Elige los últimos 28 días y marca clics, impresiones, CTR y posición.",
+            "Anota el total. Es el punto de partida, no el resultado."
+          ]
+        },
+        {
+          "titulo": "La marca",
+          "sub": "una regex",
+          "texto": [
+            "Escribe la regex de tu marca: el nombre, el dominio, variaciones y errores de escritura, separados por barra vertical.",
+            "En el filtro de Consulta, elige la opción de regex personalizada y \"coincide\". Anota clics e impresiones."
+          ]
+        },
+        {
+          "titulo": "El resto",
+          "sub": "sin marca",
+          "texto": [
+            "Cambia el filtro a \"no coincide\" con la misma regex. Anota de nuevo.",
+            "Suma de marca y sin marca y réstalo del total: lo que sobra son las anónimas."
+          ]
+        },
+        {
+          "titulo": "El registro",
+          "sub": "fecha y números",
+          "texto": [
+            "Guarda los números en una hoja de cálculo con la fecha de la ventana. Dentro de cuatro semanas comparas la misma ventana de 28 días.",
+            "Sin el registro, la mejora se vuelve una impresión personal."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (base del 25/08 al 21/09/2026)",
+            "texto": "inema.club tuvo 787 clics y un CTR de 34%. Parecía excelente. Pero 639 de 647 clics de las búsquedas principales eran de marca; las búsquedas genéricas sumaron 8 clics y 72 impresiones."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "La regex y la hoja de cálculo",
+      "sub": "Cambia lo que está entre < > por lo tuyo.",
+      "blocos": [
+        {
+          "rot": "Regex de la marca (filtro de Consulta, regex personalizada)",
+          "icone": "lupa",
+          "conteudo": "<tunombre>|<tusitio>|<tu sitio>|<error común de escritura>\n\n# ejemplo de INEMA: cualquier búsqueda que contenga la palabra\ninema"
+        },
+        {
+          "rot": "Hoja de la línea base (modelo)",
+          "icone": "lista",
+          "conteudo": "| ventana | total (clics/impr.) | marca | sin marca | anónimas | CTR | posición |\n|---|---|---|---|---|---|---|\n| <dd/mm> a <dd/mm> | <c>/<i> | <c>/<i> | <c>/<i> | <c>/<i> | <%> | <n> |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Base de INEMA (informe del 23/09/2026)",
+            "html": "<table><tr><th>propiedad</th><th>clics</th><th>impresiones</th><th>CTR</th><th>posición</th></tr><tr><td>inema.club</td><td>787</td><td>2.301</td><td>34%</td><td>5,2</td></tr><tr><td>inema.pro</td><td>42</td><td>649</td><td>6,5%</td><td>8,5</td></tr></table><p>Ventana de 28 días, del 25/08 al 21/09/2026. En las búsquedas principales, 639 de 647 clics eran de marca. Búsquedas genéricas: 8 clics y 72 impresiones.</p>"
+          },
+          {
+            "rot": "Cómo leerlo",
+            "html": "<ul><li><b>Un CTR de 34%</b> es alto porque quien busca el nombre hace clic en el propio sitio.</li><li><b>8 clics sin marca</b> en 28 días: ese es el punto de partida real.</li><li>Meta de la base: medir solo lo sin marca, porque la marca domina el total y esconde el efecto de las páginas nuevas.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: tu línea base",
+      "sub": "Una tarde, todo en el panel.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Los números de 28 días",
+          "min": "20 min",
+          "texto": "En Search Console, anota clics, impresiones, CTR y posición de los últimos 28 días, con las fechas de la ventana.",
+          "pronto": "la hoja tiene una fila con las fechas de la ventana y los cuatro números del total."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Marca, sin marca y anónimas",
+          "min": "30 min",
+          "texto": "Escribe la regex de tu marca, aplica \"coincide\" y \"no coincide\" y calcula las anónimas.",
+          "pronto": "la fila tiene los tres grupos completos, y marca + sin marca + anónimas da el total."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "El sitio tiene un CTR de 34% y una posición promedio de 5,2. ¿El SEO está funcionando?",
+          "opcoes": [
+            "Sí, un CTR alto prueba que funciona.",
+            "No se puede saber sin separar la marca: quien busca tu nombre hace clic en tu sitio.",
+            "No, un CTR superior a 30% es un error.",
+            "Solo si la posición es 1."
+          ],
+          "certa": 1,
+          "explica": "En INEMA, un CTR de 34% convivía con 8 clics sin marca en 28 días. El total mezcla a quienes ya te conocían.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "¿Por qué marca + sin marca no cuadra con el total?",
+          "opcoes": [
+            "Error del panel.",
+            "Las consultas raras se ocultan de la tabla, pero entran en el total: son las anónimas.",
+            "Porque Bing lo suma junto.",
+            "Porque el CTR está redondeado."
+          ],
+          "certa": 1,
+          "explica": "Google anonimiza las consultas raras. Cuentan en el total y desaparecen del filtro por consulta.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿Qué entra en la regex de la marca?",
+          "opcoes": [
+            "Solo el dominio exacto.",
+            "Nombre, dominio, variaciones y errores de escritura comunes.",
+            "Las palabras de tu tema.",
+            "Los nombres de los competidores."
+          ],
+          "certa": 1,
+          "explica": "Quien escribe \"inema clube\" está buscando la marca. Si la variación queda fuera, la marca se filtra al grupo sin marca e infla el número.",
+          "ref": "codigo"
+        },
+        {
+          "p": "Para comparar dentro de un mes, ¿qué necesitas guardar?",
+          "opcoes": [
+            "Una captura de pantalla del gráfico.",
+            "La fecha de la ventana y los números de los tres grupos, en la misma ventana de 28 días.",
+            "Solo el total de clics.",
+            "Nada: el panel guarda para siempre."
+          ],
+          "certa": 1,
+          "explica": "Misma ventana, mismos grupos. Y el panel no guarda para siempre: el historial desaparece en cerca de 16 meses (lección 8).",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "El total engaña",
+          "texto": "Al principio, casi todo clic es de quien ya busca tu nombre."
+        },
+        {
+          "t": "Tres grupos",
+          "texto": "De marca, sin marca y anónimas. Lo que importa es lo sin marca."
+        },
+        {
+          "t": "La vara de 2026",
+          "texto": "El informe de IA generativa de Search Console muestra solo impresiones. La base de clics sigue siendo la de Rendimiento."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Método inemaSEO, etapa 3: medición que separa la marca",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Search Console: informe de rendimiento (ayuda de Google)",
+          "href": "https://support.google.com/webmasters/answer/7576553",
+          "icone": "grafico"
+        },
+        {
+          "t": "Área inemaSEO en Eventos",
+          "href": "https://eventos.inema.pro/inemaseo/",
+          "icone": "camadas"
+        }
+      ]
+    }
+  ]
+}

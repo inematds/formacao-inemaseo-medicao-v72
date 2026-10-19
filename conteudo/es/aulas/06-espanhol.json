@@ -1,0 +1,265 @@
+{
+  "slug": "espanhol",
+  "num": 6,
+  "menu": "Idiomas",
+  "titulo": "Multilingüe como palanca: el caso del español",
+  "titulo_curto": "El caso del español",
+  "minutos": 17,
+  "lead": "En español la competencia suele ser menor y la demanda es grande. En INEMA, la página de aprender IA en español fue indexada el 03/10/2026 y, la semana siguiente, ya aparecía en consultas que la versión en portugués no alcanzaba. En esta clase decides con datos si una página merece otro idioma, y cómo hacerlo sin caer en la traducción masiva.",
+  "objetivo": "decidir, con países y consultas reales, si una página ganadora merece una versión en otro idioma, y planificar esa versión revisada.",
+  "competencias": [
+    "ler-paises-no-search-console",
+    "validar-consulta-no-idioma",
+    "planejar-versao-traduzida"
+  ],
+  "aprende": [
+    {
+      "t": "Leer países e idiomas en Search Console"
+    },
+    {
+      "t": "Lo que el español mostró en INEMA (y lo que todavía no mostró)"
+    },
+    {
+      "t": "Traducción no es investigación de palabras clave"
+    },
+    {
+      "t": "Versión revisada, hreflang y destino en el idioma"
+    }
+  ],
+  "hero_alt": "Dos personas conversan en una mesa de café al aire libre en una plaza; una le muestra el celular a la otra.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "De la pista en el panel a la página en el otro idioma",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Países",
+          "sub": "la pista",
+          "detalhe": "En Rendimiento, pestaña Países. Las impresiones de países de otro idioma muestran que ya hay gente llegando cerca de tu tema."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Consulta en el idioma",
+          "sub": "búsqueda real",
+          "detalhe": "Cada idioma busca de una manera. En español, \"IA\" e \"inteligencia artificial\" compiten; \"desde cero\" aparece donde el portugués dice \"do zero\". Valida con el autocompletado y con Search Console, no con el traductor."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "Página revisada",
+          "sub": "no traducción cruda",
+          "forte": true,
+          "detalhe": "Traducir cuesta poco; lo caro es revisar y adaptar. Título, dirección y ejemplos en el idioma. Una persona revisa antes de publicar, como en portugués."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "hreflang",
+          "sub": "ida y vuelta",
+          "detalhe": "Cada versión apunta a sí misma como canónica y a las otras con hreflang, solo entre versiones que existen de verdad (curso 1, clase 5)."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Destino en el idioma",
+          "sub": "adónde va la persona",
+          "detalhe": "Sin un próximo paso en el idioma del visitante (curso, comunidad, contacto), la página educa pero no convierte. Es la decisión principal."
+        }
+      ],
+      "volta": "¿Mediste? La próxima página ganadora vuelve a la cola",
+      "legenda": "Empieza por una página que ya mostró señal, no por todo el sitio."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "El caso y la decisión",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "La pista",
+          "sub": "países",
+          "texto": [
+            "Mira los países por impresiones de los últimos 28 días.",
+            "Pocas impresiones de afuera no son demanda lista; son una señal para probar con una página."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (base del 25/08 al 21/09/2026)",
+            "texto": "Impresiones por país: Brasil 1.449, Portugal 106, Argentina 24, Uruguay 13. Una señal pequeña, pero de gente que habla español."
+          }
+        },
+        {
+          "titulo": "La prueba",
+          "sub": "una página",
+          "texto": [
+            "Elige una página que ya funciona en tu idioma y haz la versión en el otro, con título y dirección propios.",
+            "Una página bien revisada vale más que diez traducidas de cualquier manera."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "El 30/09/2026, las consultas objetivo en portugués estaban entre las posiciones 23 y 69, con 0 clics. La página /es/aprender-inteligencia-artificial/ fue indexada el 03/10; a la semana siguiente tenía de 5 a 10 impresiones en cada consulta en español, en las posiciones 29 a 61."
+          }
+        },
+        {
+          "titulo": "La lectura honesta",
+          "sub": "lo que aún falta",
+          "texto": [
+            "Una impresión en español no es un clic ni una conversión. En INEMA, el caso muestra que el idioma abrió una puerta; el clic todavía no llegó.",
+            "Mide la versión nueva en el mismo export semanal, separada por página."
+          ]
+        },
+        {
+          "titulo": "El cuidado",
+          "sub": "sin traducción en masa",
+          "texto": [
+            "La traducción automática publicada a escala, sin revisión, entra en la política de contenido a escala.",
+            "Una página por vez, revisada, con destino en el idioma."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El hreflang y el plan de la versión",
+      "sub": "Cambia lo que está entre < > por lo tuyo. El hreflang va en cada página, no en el diseño general.",
+      "blocos": [
+        {
+          "rot": "hreflang en cada versión (las mismas líneas en las tres páginas)",
+          "icone": "arquivo",
+          "conteudo": "<link rel=\"alternate\" hreflang=\"pt-BR\" href=\"https://www.<seusite.com>/<pagina-pt>/\">\n<link rel=\"alternate\" hreflang=\"es\" href=\"https://www.<seusite.com>/es/<pagina-es>/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://www.<seusite.com>/en/<pagina-en>/\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.<seusite.com>/<pagina-pt>/\">"
+        },
+        {
+          "rot": "Plan de la versión (modelo)",
+          "icone": "lista",
+          "conteudo": "Página de origen: </pagina-pt/> (señal: <impresiones, consultas>)\nIdioma: <es>\nConsulta validada en el idioma: <consulta> (autocomplete: sí/no; Search Console: <impresiones>)\nTítulo y dirección en el idioma: <título> · </es/<slug-no-idioma>/>\nQuién revisa: <nombre>\nDestino en el idioma: <curso / grupo / contacto en español>\nMedición: export semanal, fila de la página nueva, por 4 semanas"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Países de INEMA (28 días hasta el 21/09/2026)",
+            "html": "<table><tr><th>país</th><th>impresiones</th></tr><tr><td>Brasil</td><td>1.449</td></tr><tr><td>Portugal</td><td>106</td></tr><tr><td>Argentina</td><td>24</td></tr><tr><td>Uruguay</td><td>13</td></tr></table><p>Del informe de línea base del 23/09/2026.</p>"
+          },
+          {
+            "rot": "Lo que vino después",
+            "html": "<ul><li>03/10: página ES de aprender IA indexada.</li><li>Semana del 05 al 11/10: \"aprender ia\" 10 impresiones, \"aprender inteligencia artificial desde cero\" 10, \"cómo aprender ia\" 8, posiciones 29 a 61.</li><li>Clics sin marca de inema.club en la misma semana: 0.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: la decisión con datos",
+      "sub": "Si el panel no muestra otro idioma, el E2 se vuelve un \"todavía no\" justificado.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Países e idiomas",
+          "min": "15 min",
+          "texto": "Anota los 5 países con más impresiones de los últimos 28 días y las consultas en otro idioma que aparezcan.",
+          "pronto": "la lista tiene 5 países con impresiones y las consultas en otro idioma (o \"ninguna\")."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · El plan de una versión",
+          "min": "40 min",
+          "texto": "Elige una página con señal y completa el plan de la versión: consulta validada en el idioma, título y dirección propios, revisor y destino en el idioma.",
+          "pronto": "el plan tiene la consulta verificada en el autocomplete, quién revisa y un destino en el idioma; o una frase con el motivo de esperar."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "La página ES de INEMA ganó impresiones en español la semana siguiente a la indexación. ¿Qué prueba el caso?",
+          "opcoes": [
+            "Que el español da clic garantizado.",
+            "Que el idioma abrió una puerta a consultas que el portugués no alcanzaba; el clic todavía no llegó.",
+            "Que es mejor traducir todo el sitio.",
+            "Nada."
+          ],
+          "certa": 1,
+          "explica": "Impresiones de 5 a 10 por consulta, en las posiciones 29 a 61, y 0 clics sin marca en el club. Señal, no resultado final.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "¿Por qué no basta con traducir el título palabra por palabra?",
+          "opcoes": [
+            "Porque queda feo.",
+            "Porque cada idioma busca de una manera: la consulta debe validarse en el idioma.",
+            "Porque Google lo prohíbe.",
+            "Porque el hreflang no lo permite."
+          ],
+          "certa": 1,
+          "explica": "El \"do zero\" del portugués se vuelve \"desde cero\"; \"IA\" e \"inteligencia artificial\" compiten. Traducir no es investigar palabras clave.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿Cuál es el riesgo de publicar 200 páginas traducidas automáticamente de una sola vez?",
+          "opcoes": [
+            "Ninguno.",
+            "Caer en la política de contenido a escala y no indexar.",
+            "Gastar más servidor.",
+            "Solo perder el hreflang."
+          ],
+          "certa": 1,
+          "explica": "La traducción masiva sin revisión se trata como contenido a escala. Una página a la vez, revisada.",
+          "ref": "passos"
+        },
+        {
+          "p": "La página ES quedó excelente, pero el botón lleva a una comunidad solo en portugués. ¿Qué falta?",
+          "opcoes": [
+            "Nada.",
+            "Un destino en el idioma del visitante: sin él, la página educa pero no convierte.",
+            "Más palabras clave.",
+            "Otro hreflang."
+          ],
+          "certa": 1,
+          "explica": "El propio estudio de INEMA señala esto como la decisión principal de la versión en otro idioma.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Una página con señal",
+          "texto": "Empieza por la que ya funciona, no por todo el sitio."
+        },
+        {
+          "t": "Consulta del idioma",
+          "texto": "Valida la búsqueda en el idioma; no confíes en el traductor."
+        },
+        {
+          "t": "Revisión y destino",
+          "texto": "Revisada por una persona, con hreflang de ida y vuelta y un siguiente paso en el idioma."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Google: versiones localizadas de la página (inglés)",
+          "href": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+          "icone": "camadas"
+        },
+        {
+          "t": "Método inemaSEO: multilingüe",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Curso 1, clase 5: sitemaps y hreflang",
+          "href": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/aulas/sitemaps-hreflang/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

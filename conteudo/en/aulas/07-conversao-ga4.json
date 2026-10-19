@@ -1,0 +1,279 @@
+{
+  "slug": "conversao-ga4",
+  "num": 7,
+  "menu": "Conversion",
+  "titulo": "Conversion goal and AI-sourced traffic in GA4",
+  "titulo_curto": "Conversion and AI in GA4",
+  "minutos": 18,
+  "lead": "Search Console shows who arrived from search. It doesn't say what the person did afterward, or who came from an AI assistant. That's what analytics is for: a conversion goal with the source page and a channel of its own for visits coming from ChatGPT, Perplexity, Copilot and the like. Some of them land in \"Direct\"; the lesson shows why.",
+  "objetivo": "create a conversion goal with the source page and a channel of its own for visits coming from AI assistants in GA4.",
+  "competencias": [
+    "criar-meta-de-conversao",
+    "separar-trafego-de-ia",
+    "ler-limites-do-referrer"
+  ],
+  "aprende": [
+    {
+      "t": "Why a visit is not a result"
+    },
+    {
+      "t": "A conversion goal with the source page"
+    },
+    {
+      "t": "An \"AI Assistants\" channel in GA4"
+    },
+    {
+      "t": "Why some AI traffic shows up as Direct"
+    }
+  ],
+  "hero_alt": "A customer comes in through a shop door with a little bell, seen from inside the shop.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From visit to conversion, by source",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "usuario",
+          "titulo": "Visit",
+          "sub": "someone arrived",
+          "detalhe": "Every visit has a source, when the browser tells where it came from. GA4 groups sources into channels: organic search, referral, direct, and others."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Organic Search",
+          "sub": "Google, Bing",
+          "detalhe": "It's the same audience as in Search Console, seen from the site's side. Here you see what the person did after the click."
+        },
+        {
+          "icone": "robo",
+          "titulo": "AI Assistants",
+          "sub": "channel of its own",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "chatgpt.com"
+            },
+            {
+              "icone": "chat",
+              "t": "perplexity.ai"
+            },
+            {
+              "icone": "chat",
+              "t": "copilot · gemini · claude.ai"
+            }
+          ],
+          "detalhe": "Visits that come from an assistant with a link. Without a channel of their own, they get mixed into \"Referral\". The channel gathers them all and lets you compare them with search."
+        },
+        {
+          "icone": "x",
+          "titulo": "Direct",
+          "sub": "lost source",
+          "detalhe": "When the app or the browser doesn't send the source, the visit lands in Direct. Part of the AI traffic ends up here, and there is no reliable number for how much."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Conversion",
+          "sub": "the goal",
+          "detalhe": "The action that matters to you (joining the community, asking for a quote, buying), marked as a key event. Crossed with the source page, it tells you which page brings people, not just visits."
+        }
+      ],
+      "legenda": "The AI number in GA4 is a floor: what has a marked source. The rest is hidden in Direct."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Goal and channel in four steps",
+      "sub": "Menu names change over time; look for the name of the function. Click each step.",
+      "passos": [
+        {
+          "titulo": "The goal",
+          "sub": "one action only",
+          "texto": [
+            "Pick an action that shows real interest: joining the community, asking for a quote, downloading the material.",
+            "One well-chosen goal is worth more than ten events nobody looks at."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "The method includes the \"Join the community\" event with the source page. In INEMA's analytics (Plausible), this goal was still listed as pending in October 2026. The goal is the part that most often gets pushed back; put it on your calendar."
+          }
+        },
+        {
+          "titulo": "The key event",
+          "sub": "in GA4",
+          "texto": [
+            "Fire an event when the action happens, and mark that event as a key event in the GA4 admin.",
+            "Check in the Realtime report that it shows up when you click it yourself."
+          ]
+        },
+        {
+          "titulo": "The AI channel",
+          "sub": "channel group",
+          "texto": [
+            "In the admin, look for Channel groups and create a custom group based on the default.",
+            "Add the \"AI Assistants\" channel with the source rule from the regex below, and place it above Referral; the order decides which rule catches the visit."
+          ]
+        },
+        {
+          "titulo": "The reading",
+          "sub": "no comparing studies",
+          "texto": [
+            "Cross channel and landing page with the key event. Ask: which page brings people who convert?",
+            "Don't compare your number with studies: ChatGPT's share of AI traffic ranges from 63% to 92% depending on the sample."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The channel rule and the event",
+      "sub": "Templates to copy. Swap what is between < > for your own.",
+      "blocos": [
+        {
+          "rot": "Source regex for the \"AI Assistants\" channel",
+          "icone": "lupa",
+          "conteudo": "chatgpt\\.com|perplexity|copilot|gemini\\.google|claude\\.ai"
+        },
+        {
+          "rot": "Conversion event with the source page (gtag, template)",
+          "icone": "terminal",
+          "conteudo": "document.querySelector('<seletor do botão>').addEventListener('click', function () {\n  gtag('event', '<entrar_comunidade>', { pagina_origem: location.pathname });\n});"
+        },
+        {
+          "rot": "Monthly log (template)",
+          "icone": "lista",
+          "conteudo": "| month | channel | visits | conversions | top converting page |\n|---|---|---|---|---|\n| <mm/aaaa> | Organic Search | <n> | <n> | </pagina/> |\n| <mm/aaaa> | AI Assistants | <n> | <n> | </pagina/> |\n| <mm/aaaa> | Direct | <n> | <n> | </pagina/> |"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Reading one month (example)",
+            "html": "<table><tr><th>channel</th><th>visits</th><th>conversions</th></tr><tr><td>Organic Search</td><td>420</td><td>9</td></tr><tr><td>AI Assistants</td><td>35</td><td>3</td></tr><tr><td>Direct</td><td>310</td><td>4</td></tr></table><p>Made-up numbers to teach the reading. Few AI visits, but a high conversion ratio: it's worth looking at which pages they opened.</p>"
+          },
+          {
+            "rot": "Honest limits",
+            "html": "<ul><li><b>Floor, not total</b>: a visit with no source lands in Direct.</li><li><b>Perplexity</b>: according to a blog report, GA4 doesn't recognize it on its own; that's why it's in the regex.</li><li><b>Studies disagree</b>: ChatGPT's share ranges from 63% to 92% depending on the sample; don't use it as a goal.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: goal and channel connected",
+      "sub": "No GA4? The same applies to Plausible or another analytics tool: goal + source.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · The key event",
+          "min": "40 min",
+          "texto": "Pick the action that matters, fire the event with the source page, and mark it as a key event.",
+          "pronto": "you clicked the button and the event showed up in the Realtime report, with the source page."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · The AI channel",
+          "min": "30 min",
+          "texto": "Create the custom channel group with the \"AI Assistants\" channel above Referral.",
+          "pronto": "the group shows up in the acquisition reports; if there was already a visit from chatgpt.com or perplexity.ai, it is in the new channel, not in Referral."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "GA4 shows 35 visits from AI assistants in the month. Is that the total that came from AI?",
+          "opcoes": [
+            "Yes, exactly.",
+            "No: it is a floor; visits without a tagged source fall into Direct.",
+            "No: it is double.",
+            "It depends on Search Console."
+          ],
+          "certa": 1,
+          "explica": "Apps and browsers don't always send the source. The real number is higher, and there is no reliable measure of how much.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Why does the AI channel need to sit above Referral?",
+          "opcoes": [
+            "For looks.",
+            "Because the rules are read in order: if Referral comes first, it catches the visit first.",
+            "Because Google requires it.",
+            "It doesn't need to."
+          ],
+          "certa": 1,
+          "explica": "The first rule that matches gets the visit. The specific channel comes before the generic one.",
+          "ref": "passos"
+        },
+        {
+          "p": "One study says ChatGPT is 92% of AI traffic; another says 63%. Which one should you use as a target?",
+          "opcoes": [
+            "The higher one.",
+            "The lower one.",
+            "Neither: each study has its own sample; measure yours and compare against yourself.",
+            "The average."
+          ],
+          "certa": 2,
+          "explica": "Shares from different studies can't be compared. Your own month-by-month history is the yardstick.",
+          "ref": "passos"
+        },
+        {
+          "p": "Why does the goal need the source page?",
+          "opcoes": [
+            "To dress up the report.",
+            "To know which page brings people who act, not just visit.",
+            "Because GA4 doesn't work without it.",
+            "For Search Console."
+          ],
+          "certa": 1,
+          "explica": "It's the link between SEO (which brings the visit) and the result (the action). Without it, the page with the most visits looks like the best one.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "A goal",
+          "texto": "The action that matters, with the source page."
+        },
+        {
+          "t": "Its own channel",
+          "texto": "AI Assistants separated from Referral, above it in the order."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "The AI number in analytics is a floor. Official citation dashboards (Search Console for generative AI, Bing AI Performance) are covered in course 4."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "GA4: custom channel groups (Google Help)",
+          "href": "https://support.google.com/analytics/answer/13051316",
+          "icone": "grafico"
+        },
+        {
+          "t": "GA4: key events (Google Help)",
+          "href": "https://support.google.com/analytics/answer/13128484",
+          "icone": "alvo"
+        },
+        {
+          "t": "inemaSEO method: step 3",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        }
+      ]
+    }
+  ]
+}

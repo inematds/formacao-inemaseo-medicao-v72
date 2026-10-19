@@ -1,0 +1,122 @@
+{
+  "slug": "pauta-validada",
+  "num": 5,
+  "menu": "Pauta",
+  "titulo": "Consulta com impressão e sem página: pauta validada",
+  "titulo_curto": "Pauta validada",
+  "minutos": 17,
+  "lead": "Ferramenta paga estima o que as pessoas buscam. O seu Search Console mostra o que elas já buscaram e em que você apareceu. Uma consulta sem marca com impressão e sem página feita para ela é pauta validada de graça. Nesta aula você separa pauta, página a melhorar e ruído, e escreve o briefing com um ativo real.",
+  "objetivo": "transformar consultas sem marca com impressão e sem página dona numa pauta de 5 páginas, cada uma apoiada num ativo real.",
+  "competencias": ["achar-pauta-no-search-console", "decidir-pauta-ou-melhorar", "escrever-briefing-com-ativo-real"],
+  "aprende": [
+    {"t": "O que é página dona de uma consulta"},
+    {"t": "Pauta, melhorar ou ignorar"},
+    {"t": "Por que cada pauta precisa de um ativo real"},
+    {"t": "O briefing de uma página nova"}
+  ],
+  "hero_alt": "Mão prende cartões de papel em branco num quadro de cortiça, ao lado de um notebook.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Da consulta à pauta",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "arquivo", "titulo": "Arquivo sem marca", "sub": "da semana",
+         "detalhe": "O arquivo sem-marca da aula 2 (ou a aba Consultas do painel, com o filtro \"não corresponde\" à marca). Cada linha: consulta, página, impressões, posição."},
+        {"icone": "camadas", "titulo": "Juntar por consulta", "sub": "somar as páginas",
+         "detalhe": "A mesma consulta pode aparecer com duas páginas. Some as impressões e guarde a melhor posição."},
+        {"icone": "alvo", "titulo": "Tem página dona?", "sub": "a pergunta", "forte": true,
+         "detalhe": "Página dona é a que foi feita para essa consulta: aparece na primeira página do Google para ela, ou trata exatamente desse assunto. Se não há, a consulta está sem casa."},
+        {"icone": "caneta", "titulo": "Pauta", "sub": "sem dona",
+         "detalhe": "Gente buscou, você apareceu por acaso com outra página. Escreva a página feita para essa busca, se tiver um ativo real para apoiar."},
+        {"icone": "seta", "titulo": "Melhorar", "sub": "dona fora do topo",
+         "detalhe": "Já existe a página certa, mas ela está além da primeira página. Não escreva outra: reforce essa (seções novas, links internos, links de volta)."}
+      ],
+      "legenda": "Duas páginas para a mesma busca disputam entre si. Antes de escrever, pergunte se a dona já existe."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Da lista ao briefing",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {"titulo": "Filtrar", "sub": "o que é sinal",
+         "texto": ["Fique com consultas sem marca que têm impressão e fazem sentido para o seu negócio.", "Busca que não tem a ver com você (um erro, um nome solto) é ruído: ignore."]},
+        {"titulo": "Classificar", "sub": "pauta ou melhorar",
+         "texto": ["Para cada consulta, procure a página dona no seu site.", "Sem dona: pauta. Com dona fora do topo: melhorar a dona."],
+         "exemplo": {"rot": "No INEMA (semana de 05 a 11/10/2026)", "texto": "As consultas sem marca que mais apareceram eram em espanhol: \"aprender ia\" (10 impressões), \"aprender inteligencia artificial desde cero\" (10), \"cómo aprender ia\" (8). Todas caíam na página ES de aprender IA, entre as posições 29 e 61. Já tinham dona: o caso é melhorar, não escrever outra."}},
+        {"titulo": "O ativo real", "sub": "a regra do método",
+         "texto": ["Cada página nova se apoia num ativo real: curso, projeto, experimento, dado do seu negócio. Sem ativo, a pauta espera.", "É isso que faz a página não ser mais uma igual às outras."]},
+        {"titulo": "O portão", "sub": "humano decide",
+         "texto": ["Uma pessoa aprova a lista antes de escrever. No máximo 5 páginas por vez.", "Nada de 5 variações da mesma palavra: isso é conteúdo em escala e o Google trata como spam."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "A pauta e o briefing",
+      "sub": "Modelos para copiar. Troque o que está entre < > pelo seu.",
+      "blocos": [
+        {"rot": "Pauta da semana (modelo)", "icone": "lista",
+         "conteudo": "| consulta | impressões | melhor posição | página dona | decisão | ativo real |\n|---|---|---|---|---|---|\n| <consulta> | <n> | <p> | <nenhuma> | pauta | <curso / projeto / dado> |\n| <consulta> | <n> | <p> | </pagina/> | melhorar | - |\n| <consulta> | <n> | <p> | - | ignorar (ruído) | - |"},
+        {"rot": "Briefing de uma página nova (modelo)", "icone": "caneta",
+         "conteudo": "Consulta-alvo: <consulta>\nIntenção: <o que a pessoa quer resolver>\nO que o top 10 já diz e o que falta: <lacunas>\nDado próprio obrigatório (o ativo real): <curso, projeto, número do seu negócio>\nLinks internos: <2 ou 3 páginas antigas que vão apontar para a nova>\nPronto quando: <a página responde à intenção com o dado próprio e tem 2 links internos chegando>"}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Consultas sem marca do INEMA (05–11/10/2026)", "html": "<table><tr><th>consulta</th><th>impr.</th><th>posição</th><th>página</th></tr><tr><td>aprender ia</td><td>10</td><td>34,5</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>aprender inteligencia artificial desde cero</td><td>10</td><td>33,2</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>cómo aprender ia</td><td>8</td><td>46,1</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>aprender inteligência artificial (PT)</td><td>0</td><td>-</td><td>sem impressão na semana</td></tr></table><p>Do relatório semanal de 13/10/2026.</p>"},
+          {"rot": "Como ler", "html": "<ul><li>As consultas ES já têm dona: a decisão é <b>melhorar</b> a página ES.</li><li>A consulta PT equivalente teve 0 impressão na semana: sem sinal ainda, nada de página nova por ela.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: cinco pautas com ativo",
+      "sub": "Use a semana mais recente do seu export.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · A lista classificada", "min": "40 min",
+         "texto": "Pegue as 15 consultas sem marca com mais impressões e classifique cada uma em pauta, melhorar ou ignorar.",
+         "pronto": "a pauta tem 15 linhas com impressões, melhor posição, página dona (ou \"nenhuma\") e decisão."},
+        {"id": "e2", "titulo": "E2 · Um briefing", "min": "30 min",
+         "texto": "Escolha a pauta mais forte que tem ativo real e preencha o briefing.",
+         "pronto": "o briefing tem consulta, intenção, dado próprio nomeado (curso, projeto ou número seu) e 2 páginas antigas que vão linkar a nova."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Uma consulta sem marca tem impressões e cai numa página sua na posição 45, feita para esse assunto. Pauta ou melhorar?",
+         "opcoes": ["Pauta: escrever outra página.", "Melhorar: a página dona existe, só está longe do topo.", "Ignorar.", "Apagar a página."],
+         "certa": 1, "explica": "Escrever uma segunda página para a mesma busca faz as duas disputarem. Reforce a dona.", "ref": "diagrama", "cert": true},
+        {"p": "Você achou uma pauta boa, mas não tem curso, projeto nem dado seu sobre o tema. O que fazer?",
+         "opcoes": ["Escrever assim mesmo, com texto genérico.", "Deixar a pauta esperando até ter um ativo real.", "Copiar o primeiro resultado do Google.", "Gerar 5 versões com IA."],
+         "certa": 1, "explica": "O método só publica página apoiada num ativo real. É o que a diferencia das outras.", "ref": "passos"},
+        {"p": "Por que não publicar 5 variações da mesma palavra-chave?",
+         "opcoes": ["Porque dá trabalho.", "Porque é conteúdo em escala: o Google trata como spam e as páginas disputam entre si.", "Porque o Search Console não deixa.", "Não tem problema."],
+         "certa": 1, "explica": "Scaled content abuse. E lembra o caso da aula 3: lote de páginas parecidas não entrou no índice.", "ref": "passos"},
+        {"p": "De onde vem a pauta \"validada\" desta aula?",
+         "opcoes": ["De uma estimativa de volume de ferramenta paga.", "Das consultas reais em que o seu site já apareceu no Search Console.", "Do palpite do redator.", "Das buscas do concorrente."],
+         "certa": 1, "explica": "Validada porque alguém já buscou e você já apareceu. O volume exato de busca não existe de graça; isso existe.", "ref": "diagrama"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Página dona primeiro", "texto": "Se a dona existe, melhore. Se não existe, é pauta."},
+        {"t": "Ativo real", "texto": "Sem curso, projeto ou dado seu, a pauta espera."},
+        {"t": "Régua de 2026", "texto": "O guia do Google para IA (maio/2026) pede conteúdo não-commodity: dado próprio e experiência direta. É o mesmo filtro do ativo real."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Método inemaSEO: etapas 6 e 10", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "arquivo"},
+        {"t": "Google: políticas de spam (conteúdo em escala)", "href": "https://developers.google.com/search/docs/essentials/spam-policies", "icone": "escudo"},
+        {"t": "Curso 2: as páginas que só você pode escrever", "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/", "icone": "seta"}
+      ]
+    }
+  ]
+}

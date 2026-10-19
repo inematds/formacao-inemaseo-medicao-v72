@@ -1,0 +1,186 @@
+{
+  "id": "formacao-inemaseo-medicao-v72",
+  "lang": "en",
+  "url": "https://inematds.github.io/formacao-inemaseo-medicao-v72/en/",
+  "nome": "inemaSEO 3 — Measurement and Routine: the number that matters is the non-branded one",
+  "sub": "inemaSEO Program · course 3 of 6",
+  "volta": {
+    "t": "inemaSEO Area",
+    "href": "https://eventos.inema.pro/inemaseo/"
+  },
+  "lado_card": {
+    "rot": "inemaSEO Program",
+    "t": "Course 3 of 6",
+    "texto": "With your measurement routine in place, course 4 brings the same care to AIs: official citation dashboards, bots by purpose, and WebMCP as preparation.",
+    "link": "Go to course 4",
+    "href": "https://inematds.github.io/formacao-inemaseo-ias-v72/"
+  },
+  "rodape": "INEMA.CLUB · open and free content · INEMA Learning format v7.2 · <a href=\"https://eventos.inema.pro/inemaseo/\">eventos.inema.pro/inemaseo</a> · <a href=\"https://github.com/inematds/inemaseo-metodo\">inemaSEO method (MIT)</a> · <a href=\"https://inema.club/\">inema.club</a>",
+  "videos": {},
+  "inicio": {
+    "kicker": "inemaSEO Program · course 3 of 6 · 8 lessons",
+    "titulo": "Measurement and Routine: the number that matters is the non-branded one",
+    "lead": "At the start, almost every click comes from people who already search for your name. In eight lessons, you separate the brand, read URL Inspection, decide when to change a title, turn queries into a topic list, test another language, set up the conversion goal, and build the routine with a Plan B. With INEMA's real numbers, including the zero.",
+    "cta": "Start with lesson 1",
+    "cta2": {
+      "t": "See the inemaSEO Area",
+      "href": "https://eventos.inema.pro/inemaseo/"
+    },
+    "capa_alt": "The owner of a small neighborhood bookstore looks at charts on a laptop, sitting at the wooden counter.",
+    "numeros": [
+      {
+        "v": "8",
+        "t": "short lessons"
+      },
+      {
+        "v": "16",
+        "t": "exercises with \"done when\""
+      },
+      {
+        "v": "0",
+        "t": "non-branded click on inema.club, the real case in the course"
+      },
+      {
+        "v": "0",
+        "t": "paid tool"
+      }
+    ],
+    "aulas_titulo": "The lessons",
+    "aulas_sub": "In the order of the work: get the baseline, measure every week, check the index, read what the number asks for, and keep the routine going.",
+    "blocos": [
+      {
+        "t": "Who it's for",
+        "itens": [
+          "Website owners with pages already live and Search Console verified.",
+          "People who look at the total clicks and can't tell whether SEO is working or whether it's just people who already knew you.",
+          "People who want a short weekly and monthly routine, instead of checking the dashboard whenever anxiety hits."
+        ]
+      },
+      {
+        "t": "What you walk away doing",
+        "itens": [
+          "Separate branded, non-branded and anonymized clicks and impressions every week, in a file of your own.",
+          "Read URL Inspection and know the right action for each status.",
+          "Decide with data when to rewrite a title, when to write a new page, and when to translate.",
+          "Measure conversion by source page and keep the routine going with a Plan B for days 30 to 60."
+        ]
+      },
+      {
+        "t": "Where this course fits in the inemaSEO Program",
+        "itens": [
+          "<b>1 Foundation</b> and <b>2 Content</b>: the technical groundwork and the pages only you can write.",
+          "<b>3 Measurement</b> (this course): the number that matters, the one from searches without your brand, and the routine that goes with it.",
+          "<b>4 In the AIs</b>, <b>5 With Agents</b> and <b>6 Professional</b>: official AI dashboards, agents doing the repetitive work, and SEO as a service.",
+          "All of them follow the <a href=\"https://github.com/inematds/inemaseo-metodo\">inemaSEO method</a>, open (MIT), applied on INEMA's portal, news site and events site."
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "pular": "Skip to content",
+    "aulas": "Lessons",
+    "concluido": "completed",
+    "aula": "Lesson",
+    "nesta_aula": "In this lesson, you will learn:",
+    "objetivo": "Goal:",
+    "proxima_aula": "Next lesson",
+    "aula_anterior": "Previous lesson",
+    "voltar_inicio": "Back to course start",
+    "marcar_concluida": "Mark lesson as completed",
+    "dg_dica": "Click each block in the diagram to see what it does.",
+    "copiar": "Copy",
+    "copiado": "Copied",
+    "selo_simulacao": "Simulation: illustrative example",
+    "selo_real": "Example from the repository",
+    "pronto_quando": "Done when:",
+    "fiz": "I did this exercise",
+    "video_pagina": "Video page with script",
+    "pergunta": "Question",
+    "de": "of",
+    "cert_tag": "skill",
+    "correto": "Correct",
+    "errado": "Not this one",
+    "quiz_aguarda": "Pick an answer. The explanation shows up after you try.",
+    "proxima_pergunta": "Next question",
+    "quiz_ver": "See result",
+    "quiz_fim": "Quiz complete",
+    "quiz_total": "You got {a} of {n} right. Get them all right and the lesson is marked as complete.",
+    "aparencia": "Appearance",
+    "tamanho_texto": "Text size",
+    "tema": "Theme",
+    "tema_escuro": "Dark",
+    "tema_papel": "Light paper",
+    "role_dica": "Scroll the page: each step below lights up its part of the diagram.",
+    "pre_requisito": "requires",
+    "ver_aula": "View the lesson",
+    "mapa_dica": "Tap an exercise to see what to do and the \"done when\".",
+    "etapas": "Steps",
+    "exercicios": "exercises",
+    "rever": "Review:",
+    "revisar_erradas": "Review the wrong ones",
+    "refazer": "Retake the quiz",
+    "h_semana": "h per week",
+    "data_inicio": "Start date",
+    "ritmo": "Time available",
+    "gerar_plano": "Generate my plan",
+    "baixar_md": "Download plan.md",
+    "baixar_ics": "Download to calendar (.ics)",
+    "ind_estudo": "Study (lessons)",
+    "ind_pratica": "Self-reported practice",
+    "ind_nota": "Practice = exercises you marked as done. Proof comes in the certification exam.",
+    "estudo": {
+      "titulo": "Your study",
+      "continuar": "Pick up where I left off",
+      "comecar": "Start with lesson 1",
+      "cta_continuar": "Continue lesson {n}",
+      "hoje": "today",
+      "ontem": "yesterday",
+      "ha_dias": "{n} days ago",
+      "desempenho": "Quiz performance",
+      "notas": "My notes",
+      "dados": "Copy my data",
+      "sem_testes": "No quizzes taken yet. The quiz is at the end of each lesson.",
+      "nao_fez": "quiz not taken yet",
+      "ultimo": "Latest",
+      "melhor": "Best",
+      "tentativas": "attempts",
+      "tentativa": "attempt",
+      "tudo_certo": "You got everything right on the latest quiz.",
+      "rever": "To review",
+      "resposta": "Correct answer:",
+      "ir_teste": "Retake the quiz",
+      "sem_notas": "No notes yet. In the lesson, select a piece of text and tap Highlight or Note.",
+      "so_marcado": "(highlight only)",
+      "marcar": "Highlight",
+      "anotar": "Note",
+      "salvar": "Save",
+      "apagar": "Remove highlight",
+      "fechar": "Close",
+      "nota_ph": "Write your note about this passage…",
+      "um_bloco": "Highlight within a single paragraph only.",
+      "nao_marca": "This passage can't be highlighted.",
+      "dados_exp": "Your progress, your notes and your quiz scores stay only in this browser. Download a copy (.json) to keep it or to continue on another computer or browser; there, load the copy. Loading adds to what already exists and doesn't erase anything.",
+      "exportar": "Download copy",
+      "importar": "Load copy",
+      "import_ok": "Copy loaded ({n} items). Refreshing the page…",
+      "import_erro": "File not recognized. Nothing was changed.",
+      "import_outro": "This copy is from another course. Nothing was changed.",
+      "export_ok": "Copy downloaded."
+    },
+    "conv_dica": "Choose your answer. The comment appears right after, and the conversation goes on based on your choice.",
+    "conv_voce": "You",
+    "conv_escolha": "Your answer",
+    "conv_boa": "Good choice",
+    "conv_meio": "Room to improve",
+    "conv_ruim": "Weak choice",
+    "conv_fim": "End of the conversation",
+    "conv_placar": "You scored {p} of {m} possible points.",
+    "conv_licao": "Lesson:",
+    "conv_recomecar": "Restart the conversation",
+    "conv_feita": "Your best score: {p} of {m} points.",
+    "comecar": "Start the lesson",
+    "nesta_vai": "In this lesson you will",
+    "trocar_tema": "Switch light/dark theme"
+  },
+  "icone": "lupa"
+}

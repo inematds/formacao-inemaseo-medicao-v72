@@ -1,0 +1,275 @@
+{
+  "slug": "export-semanal",
+  "num": 2,
+  "menu": "Export",
+  "titulo": "Weekly export that separates the brand from anonymized queries",
+  "titulo_curto": "Weekly export",
+  "minutos": 18,
+  "lead": "The baseline is a photo. To see the movie, you need the same photo every week, in the same format. The gsc_semanal.py script does that: it separates branded, non-branded, and anonymized, and writes one row per week. Without Google credentials, the same spreadsheet by hand works.",
+  "objetivo": "build the weekly export that writes total, branded, non-branded, and anonymized in one row per week.",
+  "competencias": [
+    "exportar-semana-sem-marca",
+    "ler-resumo-semanal",
+    "comparar-semanas"
+  ],
+  "aprende": [
+    {
+      "t": "What gsc_semanal.py writes and why"
+    },
+    {
+      "t": "Reading resumo.csv week by week"
+    },
+    {
+      "t": "INEMA's real arc: impressions go up, non-branded clicks don't"
+    },
+    {
+      "t": "Doing the same by hand when there are no credentials"
+    }
+  ],
+  "hero_alt": "A shelf with binders organized by color and an open notebook showing a spreadsheet.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From the week on the dashboard to the row in the file",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Search Console",
+          "sub": "7 days, up to 2 days ago",
+          "detalhe": "The dashboard lags by about 2 days. The script takes the 7 days ending the day before yesterday, so the week always closes on the same day of the week."
+        },
+        {
+          "icone": "marca",
+          "titulo": "Brand regex",
+          "sub": "GSC_MARCA",
+          "detalhe": "The same regex from lesson 1. Each query is tested against it: if it matches, it's branded; if not, it's non-branded."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Three buckets",
+          "sub": "branded · non-branded · anonymized",
+          "forte": true,
+          "detalhe": "Branded and non-branded come from the per-query table. Anonymized is what's left over: total minus the other two. The script also counts how many different non-branded queries showed up."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "resumo.csv",
+          "sub": "one row per week",
+          "itens": [
+            {
+              "icone": "lista",
+              "t": "resumo.csv: the series"
+            },
+            {
+              "icone": "lista",
+              "t": "[data]_[site]_sem-marca.csv: query and page"
+            }
+          ],
+          "detalhe": "The summary grows by one row per week and per site. The non-branded file keeps each query with its page, clicks, impressions, CTR, and position: it's the raw material for lessons 4 and 5."
+        }
+      ],
+      "volta": "Every week, on the same day: one more row",
+      "legenda": "One row per week is little work and becomes the history the dashboard doesn't keep."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "How the export works",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "Credential",
+          "sub": "read-only",
+          "texto": [
+            "The script uses your gcloud login with the Search Console read-only scope and a Google Cloud project for the quota.",
+            "If you don't have this, skip to step 4: the spreadsheet by hand gives the same result, just slower."
+          ]
+        },
+        {
+          "titulo": "Variables",
+          "sub": "sites and brand",
+          "texto": [
+            "GSC_SITES holds the properties (e.g., sc-domain:yoursite.com). GSC_MARCA holds the regex. GSC_QUOTA_PROJ holds the quota project.",
+            "No key lives in the code."
+          ]
+        },
+        {
+          "titulo": "Run",
+          "sub": "every week",
+          "texto": [
+            "Run it on the same day of the week. Running on consecutive days creates weeks that share days; don't add those two together.",
+            "The resumo.csv file only gains rows; nothing is deleted."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "The weeks 09/27–10/03 and 09/28–10/04 share six days. Both are in the file, but the comparison uses weeks that don't overlap."
+          }
+        },
+        {
+          "titulo": "By hand",
+          "sub": "no credential",
+          "texto": [
+            "In the dashboard, set a 7-day window, then use the regex filter \"matches\" and \"doesn't match\". Copy the numbers into the lesson 1 spreadsheet.",
+            "It takes 10 minutes a week."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The command and the file it writes",
+      "sub": "Command from the open script gsc_semanal.py. Replace what is between < > with your own. It needs a Google credential; without it, use the spreadsheet.",
+      "blocos": [
+        {
+          "rot": "Terminal · read-only login (once)",
+          "icone": "terminal",
+          "conteudo": "gcloud auth application-default login \\\n  --scopes=https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/cloud-platform"
+        },
+        {
+          "rot": "Terminal · the week's export",
+          "icone": "terminal",
+          "conteudo": "export GSC_SITES=\"sc-domain:<seusite.com>\"\nexport GSC_MARCA=\"<seusite>|<seu nome>|<erro comum>\"\nexport GSC_QUOTA_PROJ=\"<projeto-da-cota>\"\npython3 tools/gsc_semanal.py --dias 7 --saida dados/gsc"
+        },
+        {
+          "rot": "resumo.csv header",
+          "icone": "arquivo",
+          "conteudo": "inicio,fim,site,total_cliques,total_impr,marca_cliques,marca_impr,sem_marca_cliques,sem_marca_impr,anonimas_cliques,anonimas_impr,consultas_sem_marca"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "resumo.csv for inema.club",
+            "html": "<table><tr><th>week</th><th>total</th><th>branded</th><th>non-branded</th><th>anonymized</th><th>non-branded queries</th></tr><tr><td>09/16–09/22</td><td>104/437</td><td>79/245</td><td>0/8</td><td>25/184</td><td>3</td></tr><tr><td>09/24–09/30</td><td>77/820</td><td>57/220</td><td>0/54</td><td>20/546</td><td>29</td></tr><tr><td>09/27–10/03</td><td>87/817</td><td>68/288</td><td>0/55</td><td>19/474</td><td>36</td></tr><tr><td>09/28–10/04</td><td>77/708</td><td>60/253</td><td>0/47</td><td>17/408</td><td>30</td></tr><tr><td>10/05–10/11</td><td>114/702</td><td>87/238</td><td>0/157</td><td>27/307</td><td>51</td></tr></table><p>Clicks/impressions. Real file from inemaSEO (2026).</p>"
+          },
+          {
+            "rot": "resumo.csv for inema.pro",
+            "html": "<table><tr><th>week</th><th>total</th><th>branded</th><th>non-branded</th><th>anonymized</th><th>non-branded queries</th></tr><tr><td>09/16–09/22</td><td>6/112</td><td>4/61</td><td>0/5</td><td>2/46</td><td>2</td></tr><tr><td>09/24–09/30</td><td>2/198</td><td>1/67</td><td>0/8</td><td>1/123</td><td>4</td></tr><tr><td>09/27–10/03</td><td>5/232</td><td>4/98</td><td>0/15</td><td>1/119</td><td>9</td></tr><tr><td>09/28–10/04</td><td>4/201</td><td>4/89</td><td>0/14</td><td>0/98</td><td>8</td></tr><tr><td>10/05–10/11</td><td>11/761</td><td>5/116</td><td><b>2/293</b></td><td>4/352</td><td>52</td></tr></table>"
+          },
+          {
+            "rot": "How to read it",
+            "html": "<ul><li><b>inema.club</b>: non-branded impressions went from 8 to 157, and non-branded queries from 3 to 51 in four weeks.</li><li><b>But the club's non-branded clicks are still at 0.</b> New people are seeing the site; they aren't clicking yet.</li><li><b>inema.pro</b>: the first 2 non-branded clicks, in the week of 10/05 to 10/11, from searches like \"curso jev\".</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: two weeks logged",
+      "sub": "E2 needs a week of waiting.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Regex and first week",
+          "min": "30 min",
+          "texto": "Fine-tune the regex from lesson 1 with at least 3 variations of your brand and the typos that show up in your queries. Log the first week, with the script or by hand.",
+          "pronto": "the summary (CSV or spreadsheet) has the first row with the three buckets, and no query with your name ended up in the non-branded bucket."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Second week and comparison",
+          "min": "20 min",
+          "dias": 7,
+          "texto": "One week later, on the same day, log the second row and write one sentence comparing the non-branded numbers of the two weeks.",
+          "pronto": "there are two rows with no days in common and a sentence like \"non-branded impressions went from X to Y; clicks from A to B\"."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "The non-branded impressions for inema.club went from 8 to 157 in four weeks, and the non-branded clicks stayed at 0. What does that tell you?",
+          "opcoes": [
+            "That the SEO failed.",
+            "That new people started seeing the site in search, but aren't clicking yet: the next step is to check position and title.",
+            "That the dashboard is broken.",
+            "That it's time to buy ads."
+          ],
+          "certa": 1,
+          "explica": "A non-branded impression is the first signal. A click depends on position and title; that's what lessons 4 and 8 tackle.",
+          "ref": "codigo",
+          "cert": true
+        },
+        {
+          "p": "Why run the export on the same day of the week every time?",
+          "opcoes": [
+            "Out of superstition.",
+            "So the weeks don't share days and the comparison is fair.",
+            "Because Google only releases data on Tuesdays.",
+            "To use less quota."
+          ],
+          "certa": 1,
+          "explica": "Overlapping weeks count the same days twice. At INEMA, 09/27–10/03 and 09/28–10/04 share six days.",
+          "ref": "passos"
+        },
+        {
+          "p": "You don't have a Google Cloud credential. Now what?",
+          "opcoes": [
+            "Give up on measuring.",
+            "Pay for a tool.",
+            "Build the same row by hand in the dashboard, with the regex filter, 10 minutes a week.",
+            "Ask someone for their password."
+          ],
+          "certa": 2,
+          "explica": "The script only automates what the dashboard shows. The hand-made spreadsheet has the same three buckets.",
+          "ref": "passos"
+        },
+        {
+          "p": "What does the file [data]_[site]_sem-marca.csv hold?",
+          "opcoes": [
+            "Just the total.",
+            "Each non-branded query with its page, clicks, impressions, CTR, and position.",
+            "The branded queries.",
+            "The Search Console passwords."
+          ],
+          "certa": 1,
+          "explica": "It's the raw material for the next lessons: a page with impressions and no clicks (lesson 4) and a query with no owner page (lesson 5).",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "One row per week",
+          "texto": "Same day, same buckets, a file that only grows."
+        },
+        {
+          "t": "Impressions first, then clicks",
+          "texto": "Non-branded starts with impressions. At INEMA, 8 → 157 in four weeks, with 0 clicks on the club."
+        },
+        {
+          "t": "Script or spreadsheet",
+          "texto": "gsc_semanal.py automates it; without a credential, the dashboard gives the same number."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "gsc_semanal.py on GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/gsc_semanal.py",
+          "icone": "terminal"
+        },
+        {
+          "t": "Anonymized queries: Google's analysis (English)",
+          "href": "https://developers.google.com/search/blog/2022/10/performance-data-deep-dive",
+          "icone": "lupa"
+        },
+        {
+          "t": "inemaSEO method",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        }
+      ]
+    }
+  ]
+}

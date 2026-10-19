@@ -1,0 +1,268 @@
+{
+  "slug": "inspecao-url",
+  "num": 3,
+  "menu": "Inspección",
+  "titulo": "Inspección de URL: indexada, descubierta, desconocida",
+  "titulo_curto": "Inspección de URL",
+  "minutos": 17,
+  "lead": "Antes de medir clics, confirma que la página está en el índice. La inspección de URL de Search Console te dice, página por página, si Google la conoce, si la rastreó, si la indexó y qué dirección eligió como oficial. Cada estado pide una acción distinta. En esta clase armas la lista de tus URL clave y lees el estado de cada una.",
+  "objetivo": "leer el estado de cada URL clave en la inspección y elegir la acción correcta para cada estado.",
+  "competencias": [
+    "inspecionar-urls-chave",
+    "diagnosticar-estado-de-indexacao",
+    "escolher-acao-por-estado"
+  ],
+  "aprende": [
+    {
+      "t": "Los cuatro estados que importan"
+    },
+    {
+      "t": "La acción correcta para cada estado"
+    },
+    {
+      "t": "Por qué un lote de páginas delgadas no entra"
+    },
+    {
+      "t": "Armar y revisar la lista de URL clave"
+    }
+  ],
+  "hero_alt": "Una inspectora de calidad examina etiquetas de cajas con una lupa, con un portapapeles en la otra mano.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "De desconocida a indexada",
+      "sub": "Haz clic en cada estado para ver la acción.",
+      "estilo": "escada",
+      "nos": [
+        {
+          "icone": "x",
+          "titulo": "Desconocida",
+          "sub": "Google no reconoce esta URL",
+          "detalhe": "Ningún enlace ni sitemap llevó a Google hasta ella. Acción: enlace interno desde una página ya indexada, la URL en el sitemap y \"Solicitar indexación\" en el panel."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Descubierta",
+          "sub": "sin indexar",
+          "detalhe": "Google sabe que existe, pero ni siquiera la rastreó. Suele ser señal de muchas páginas parecidas a la vez o de poco valor percibido. Acción: cuerpo propio, enlaces internos, publicar a un ritmo menor."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Rastreada",
+          "sub": "sin indexar",
+          "detalhe": "Google la leyó y decidió no guardarla. Acción: compárala con las páginas parecidas del sitio; mejora lo que solo ella tiene o sácala del índice (noindex) hasta que tenga cuerpo."
+        },
+        {
+          "icone": "check",
+          "titulo": "Indexada",
+          "sub": "enviada e indexada",
+          "forte": true,
+          "detalhe": "Está en el índice. Aún falta revisar el canónico que Google eligió: si es otra dirección, vuelve al curso 1, lección 4."
+        }
+      ],
+      "legenda": "La inspección no sube la página de nivel por sí sola. Te dice en qué nivel está la página y qué le falta."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "La lista de URLs clave y la lectura",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "La lista",
+          "sub": "10 a 15 URLs",
+          "texto": [
+            "Elige las páginas que necesitan estar en el índice: home, páginas de tema, catálogo, páginas nuevas del mes.",
+            "Guárdalas en un archivo urls-chave.txt. Es la misma lista todas las semanas."
+          ]
+        },
+        {
+          "titulo": "La inspección",
+          "sub": "panel o script",
+          "texto": [
+            "En Search Console, pega cada URL en la barra de inspección. Anota el estado, la fecha del último rastreo y el canónico de Google.",
+            "gsc_inspecionar.py hace lo mismo en lote, con credencial. La API es solo lectura: \"Solicitar indexación\" sigue siendo un clic en el panel."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "El 05/10/2026, 12 de 14 URLs clave indexadas. El 13/10, 13 de 14. Faltaba /eventos/, \"desconocida para Google\"."
+          }
+        },
+        {
+          "titulo": "El lote que no entra",
+          "sub": "descubierta, sin indexar",
+          "texto": [
+            "Muchas páginas parecidas publicadas de una vez suelen quedarse en \"descubierta\".",
+            "Antes de pedir indexación de nuevo, compara las páginas entre sí."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (23/09/2026)",
+            "texto": "283 fichas de curso se publicaron en un solo commit. De una muestra de 6, 5 estaban descubiertas y nunca rastreadas. Cada ficha tenía entre 170 y 240 palabras, dos fichas sorteadas compartían el 47% del vocabulario, el FAQ era idéntico y la descripción estaba copiada."
+          }
+        },
+        {
+          "titulo": "El enlace que desapareció",
+          "sub": "estado que empeora",
+          "texto": [
+            "Si una página indexada vuelve a caer, busca qué cambió en los enlaces internos.",
+            "Una página sin enlace renderizado en el servidor queda huérfana para el buscador."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (30/09/2026)",
+            "texto": "La página /cursos/ pasó a ser \"solo búsqueda\" y las 310 fichas perdieron el único enlace interno renderizado en el servidor. La corrección fue un índice contraído, sin cambio visual."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "La lista, el comando y el registro",
+      "sub": "Cambia lo que está entre < > por lo tuyo. El comando necesita credencial de Google; sin ella, inspecciona en el panel.",
+      "blocos": [
+        {
+          "rot": "urls-chave.txt (una por línea)",
+          "icone": "arquivo",
+          "conteudo": "https://www.<seusite.com>/\nhttps://www.<seusite.com>/<pagina-de-assunto>/\nhttps://www.<seusite.com>/<catalogo>/\nhttps://www.<seusite.com>/<pagina-nova>/"
+        },
+        {
+          "rot": "Terminal · inspección en lote (gsc_inspecionar.py)",
+          "icone": "terminal",
+          "conteudo": "export GSC_QUOTA_PROJ=\"<projeto-da-cota>\"\npython3 tools/gsc_inspecionar.py sc-domain:<seusite.com> $(cat urls-chave.txt)"
+        },
+        {
+          "rot": "Registro semanal (modelo)",
+          "icone": "lista",
+          "conteudo": "| URL | estado | último rastreo | canónico de Google | acción |\n|---|---|---|---|---|\n| </pagina/> | <Enviada e indexada> | <aaaa-mm-dd> | <igual> | <ninguna> |\n| </outra/> | <Google no reconoce esta URL> | - | - | <enlace interno + sitemap + solicitar> |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Inspección de INEMA (13/10/2026)",
+            "html": "<table><tr><th>URL</th><th>estado</th><th>rastreo</th></tr><tr><td>/</td><td>Submitted and indexed</td><td>2026-10-12</td></tr><tr><td>/aprender-inteligencia-artificial/</td><td>Submitted and indexed</td><td>2026-10-10</td></tr><tr><td>/es/aprender-inteligencia-artificial/</td><td>Submitted and indexed</td><td>2026-10-03</td></tr><tr><td>/cursos/</td><td>Submitted and indexed</td><td>2026-10-12</td></tr><tr><td>/eventos/</td><td>URL is unknown to Google</td><td>-</td></tr></table><p>5 de las 14 filas del informe semanal. Indexadas: 13 de 14.</p>"
+          },
+          {
+            "rot": "Formato de la salida del script",
+            "html": "<pre>https://www.seusite.com/pagina/\n   Enviada e indexada | rastreio 2026-10-13 | canônico Google https://www.seusite.com/pagina/</pre><p>Simulación del formato: estado, fecha del último rastreo y canónico elegido por Google.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: tus URLs clave",
+      "sub": "Empieza por el panel; el script es opcional.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · La lista",
+          "min": "15 min",
+          "texto": "Escribe el urls-chave.txt con 10 URLs que necesitan estar en el índice, todas respondiendo 200.",
+          "pronto": "el archivo tiene 10 URLs del mismo dominio, una por línea, y cada una abre sin error."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · El registro con acción",
+          "min": "40 min",
+          "texto": "Inspecciona las 10 URLs y completa el registro. Para cada una que no esté indexada, escribe la acción del diagrama.",
+          "pronto": "el registro tiene 10 líneas con estado, fecha de rastreo y canónico de Google, y toda línea no indexada tiene una acción escrita."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "La página aparece como \"Descubierta: actualmente sin indexar\". ¿Qué quiere decir eso?",
+          "opcoes": [
+            "Google la leyó y la rechazó.",
+            "Google sabe que existe, pero todavía no la rastreó.",
+            "Está indexada.",
+            "El sitio está bloqueado."
+          ],
+          "certa": 1,
+          "explica": "Descubierta es antes del rastreo. Rastreada y sin indexar es después: Google la leyó y no quiso guardarla.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Un lote de 283 páginas parecidas no entra en el índice. ¿Cuál es la primera acción?",
+          "opcoes": [
+            "Pedir la indexación de todas de nuevo.",
+            "Comparar las páginas entre sí: tamaño, vocabulario repetido, texto copiado.",
+            "Publicar 283 más.",
+            "Comprar un indexador."
+          ],
+          "certa": 1,
+          "explica": "En INEMA, las fichas tenían entre 170 y 240 palabras y dos elegidas al azar compartían el 47% del vocabulario. El problema era el lote, no el pedido.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿A dónde va una URL \"desconocida para Google\"?",
+          "opcoes": [
+            "Al noindex.",
+            "A un enlace interno de una página indexada, al sitemap y a \"Solicitar indexación\".",
+            "Al robots.txt.",
+            "A la basura."
+          ],
+          "certa": 1,
+          "explica": "Desconocida es falta de camino: ningún enlace ni sitemap llevó a Google hasta ella.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿El script gsc_inspecionar.py puede pedir la indexación?",
+          "opcoes": [
+            "Sí, es para eso.",
+            "No: la API es solo de lectura; el pedido es un clic en el panel.",
+            "Solo para páginas de ofertas de empleo.",
+            "Solo con clave de pago."
+          ],
+          "certa": 1,
+          "explica": "El script lee estado, rastreo y canónico. El botón \"Solicitar indexación\" solo existe en el panel.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Cuatro estados",
+          "texto": "Desconocida, descubierta, rastreada e indexada. Cada uno tiene su acción."
+        },
+        {
+          "t": "Un lote delgado no entra",
+          "texto": "Antes de pedir de nuevo, compara las páginas entre sí."
+        },
+        {
+          "t": "La misma lista cada semana",
+          "texto": "El urls-chave.txt muestra cuándo un estado mejora o empeora."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "gsc_inspecionar.py en GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/gsc_inspecionar.py",
+          "icone": "terminal"
+        },
+        {
+          "t": "Inspección de URL (ayuda de Google)",
+          "href": "https://support.google.com/webmasters/answer/9012289",
+          "icone": "lupa"
+        },
+        {
+          "t": "Curso 1, clase 7: la página delgada sale del índice",
+          "href": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/aulas/pagina-rasa/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

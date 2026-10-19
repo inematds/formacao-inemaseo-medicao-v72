@@ -1,0 +1,260 @@
+{
+  "slug": "pauta-validada",
+  "num": 5,
+  "menu": "Topic list",
+  "titulo": "Query with impressions and no page: validated topic",
+  "titulo_curto": "Validated topic",
+  "minutos": 17,
+  "lead": "A paid tool estimates what people search for. Your Search Console shows what they already searched for and where you appeared. A non-branded query with impressions and no page made for it is a validated topic, for free. In this lesson you sort topics, pages to improve and noise, and you write the brief with a real asset.",
+  "objetivo": "turn non-branded queries with impressions and no owner page into a topic list of 5 pages, each backed by a real asset.",
+  "competencias": [
+    "achar-pauta-no-search-console",
+    "decidir-pauta-ou-melhorar",
+    "escrever-briefing-com-ativo-real"
+  ],
+  "aprende": [
+    {
+      "t": "What an owner page for a query is"
+    },
+    {
+      "t": "Topic, improve, or ignore"
+    },
+    {
+      "t": "Why each topic needs a real asset"
+    },
+    {
+      "t": "The brief for a new page"
+    }
+  ],
+  "hero_alt": "A hand pins blank paper cards to a corkboard, next to a notebook.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From query to topic",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "arquivo",
+          "titulo": "Non-branded file",
+          "sub": "of the week",
+          "detalhe": "The non-branded file from lesson 2 (or the Queries tab of the dashboard, with the filter \"does not match\" the brand). Each row: query, page, impressions, position."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Group by query",
+          "sub": "add up the pages",
+          "detalhe": "The same query can show up with two pages. Add up the impressions and keep the best position."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Is there an owner page?",
+          "sub": "the question",
+          "forte": true,
+          "detalhe": "The owner page is the one made for that query: it appears on the first page of Google for it, or it deals with exactly that subject. If there is none, the query has no home."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "Topic list",
+          "sub": "no owner",
+          "detalhe": "People searched, and you showed up by chance with another page. Write the page made for that search, if you have a real asset to back it."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Improve",
+          "sub": "owner outside the top",
+          "detalhe": "The right page already exists, but it sits beyond the first page. Don't write another one: strengthen this one (new sections, internal links, links back to it)."
+        }
+      ],
+      "legenda": "Two pages for the same search compete with each other. Before writing, ask whether the owner page already exists."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "From list to brief",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "Filter",
+          "sub": "what is signal",
+          "texto": [
+            "Keep the non-branded queries that have impressions and make sense for your business.",
+            "A search that has nothing to do with you (a typo, a stray name) is noise: ignore it."
+          ]
+        },
+        {
+          "titulo": "Sort",
+          "sub": "topic or improve",
+          "texto": [
+            "For each query, look for the owner page on your site.",
+            "No owner: topic. Owner outside the top: improve the owner page."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (week of 10/05 to 10/11/2026)",
+            "texto": "The non-branded queries that appeared the most were in Spanish: \"aprender ia\" (10 impressions), \"aprender inteligencia artificial desde cero\" (10), \"cómo aprender ia\" (8). All landed on the Spanish page about learning AI, between positions 29 and 61. They already had an owner page: the case is to improve, not to write another one."
+          }
+        },
+        {
+          "titulo": "The real asset",
+          "sub": "the rule of the method",
+          "texto": [
+            "Every new page rests on a real asset: a course, a project, an experiment, data from your business. Without an asset, the topic waits.",
+            "That is what keeps the page from being just another copy of the rest."
+          ]
+        },
+        {
+          "titulo": "The gate",
+          "sub": "a human decides",
+          "texto": [
+            "A person approves the list before anything is written. At most 5 pages at a time.",
+            "No 5 variations of the same keyword: that is content at scale, and Google treats it as spam."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The topic list and the brief",
+      "sub": "Templates to copy. Swap what is between < > for your own.",
+      "blocos": [
+        {
+          "rot": "Weekly topic list (template)",
+          "icone": "lista",
+          "conteudo": "| query | impressions | best position | owner page | decision | real asset |\n|---|---|---|---|---|---|\n| <query> | <n> | <p> | <none> | topic | <course / project / data> |\n| <query> | <n> | <p> | </page/> | improve | - |\n| <query> | <n> | <p> | - | ignore (noise) | - |"
+        },
+        {
+          "rot": "Brief for a new page (template)",
+          "icone": "caneta",
+          "conteudo": "Target query: <query>\nIntent: <what the person wants to solve>\nWhat the top 10 already says and what is missing: <gaps>\nRequired own data (the real asset): <course, project, number from your business>\nInternal links: <2 or 3 older pages that will point to the new one>\nDone when: <the page answers the intent with your own data and has 2 internal links coming in>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Non-branded INEMA queries (Oct 5–11, 2026)",
+            "html": "<table><tr><th>query</th><th>impr.</th><th>position</th><th>page</th></tr><tr><td>aprender ia</td><td>10</td><td>34,5</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>aprender inteligencia artificial desde cero</td><td>10</td><td>33,2</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>cómo aprender ia</td><td>8</td><td>46,1</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>aprender inteligência artificial (PT)</td><td>0</td><td>-</td><td>no impressions this week</td></tr></table><p>From the weekly report of Oct 13, 2026.</p>"
+          },
+          {
+            "rot": "How to read it",
+            "html": "<ul><li>The ES queries already have an owner: the decision is to <b>improve</b> the ES page.</li><li>The equivalent PT query had 0 impressions this week: no signal yet, so no new page for it.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: five topics with an asset",
+      "sub": "Use the most recent week of your export.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · The ranked list",
+          "min": "40 min",
+          "texto": "Take the 15 non-branded queries with the most impressions and sort each one into topic, improve, or ignore.",
+          "pronto": "the list has 15 rows with impressions, best position, owner page (or \"none\"), and decision."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · One brief",
+          "min": "30 min",
+          "texto": "Pick the strongest topic that has a real asset and fill in the brief.",
+          "pronto": "the brief has a query, intent, a named own data point (a course, a project, or a number of yours), and 2 older pages that will link to the new one."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "A non-branded query has impressions and lands on a page of yours at position 45, built for that subject. Topic or improve?",
+          "opcoes": [
+            "Topic: write another page.",
+            "Improve: the owner page exists, it is just far from the top.",
+            "Ignore.",
+            "Delete the page."
+          ],
+          "certa": 1,
+          "explica": "Writing a second page for the same search makes the two compete. Strengthen the owner page.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "You found a good topic, but you have no course, project, or data of your own on the subject. What do you do?",
+          "opcoes": [
+            "Write it anyway, with generic text.",
+            "Leave the topic waiting until you have a real asset.",
+            "Copy the first Google result.",
+            "Generate 5 versions with AI."
+          ],
+          "certa": 1,
+          "explica": "The method only publishes a page backed by a real asset. That is what sets it apart from the others.",
+          "ref": "passos"
+        },
+        {
+          "p": "Why not publish 5 variations of the same keyword?",
+          "opcoes": [
+            "Because it is a lot of work.",
+            "Because it is content at scale: Google treats it as spam, and the pages compete with each other.",
+            "Because Search Console doesn't allow it.",
+            "It's not a problem."
+          ],
+          "certa": 1,
+          "explica": "Scaled content abuse. And remember the case from lesson 3: a batch of similar pages did not make it into the index.",
+          "ref": "passos"
+        },
+        {
+          "p": "Where does the \"validated\" topic in this lesson come from?",
+          "opcoes": [
+            "From a volume estimate from a paid tool.",
+            "From the real queries your site has already appeared for in Search Console.",
+            "From the writer's guess.",
+            "From a competitor's searches."
+          ],
+          "certa": 1,
+          "explica": "Validated because someone has already searched for it and you have already shown up. The exact search volume isn't available for free; this is.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "Owner page first",
+          "texto": "If the owner page exists, improve it. If it doesn't, it goes on the topic list."
+        },
+        {
+          "t": "Real asset",
+          "texto": "Without a course, project, or data of your own, the topic waits."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "Google's guide for AI (May/2026) asks for non-commodity content: your own data and direct experience. It's the same filter as the real asset."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "inemaSEO method: steps 6 and 10",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Google: spam policies (content at scale)",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "icone": "escudo"
+        },
+        {
+          "t": "Course 2: the pages only you can write",
+          "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

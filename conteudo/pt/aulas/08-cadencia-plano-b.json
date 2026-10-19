@@ -1,0 +1,227 @@
+{
+  "slug": "cadencia-plano-b",
+  "num": 8,
+  "menu": "Rotina",
+  "titulo": "Cadência semanal e mensal e o Plano B dos dias 30 a 60",
+  "titulo_curto": "Cadência e Plano B",
+  "minutos": 20,
+  "lead": "SEO paga em semanas e meses, não em dias. O que faz o resultado é a rotina: um olhar por semana, uma bateria por mês e, entre os dias 30 e 60, uma resposta para cada sintoma em vez de desistir. E um cuidado que quase ninguém tem: o Search Console guarda só uns 16 meses. Quem não arquiva perde a própria história.",
+  "objetivo": "montar a rotina semanal e mensal, arquivar o histórico e escolher a resposta certa para cada sintoma dos dias 30 a 60.",
+  "competencias": ["manter-cadencia-de-medicao", "arquivar-historico-do-search-console", "aplicar-plano-b-por-sintoma", "planejar-rotina-de-medicao"],
+  "aprende": [
+    {"t": "A cadência: semana 0, cada página, semanal, mensal"},
+    {"t": "Por que arquivar o Search Console"},
+    {"t": "O Plano B: um sintoma, uma resposta"},
+    {"t": "Treinar numa conversa simulada e montar o plano datado"}
+  ],
+  "hero_alt": "Calendário de parede com datas circuladas a lápis, ao lado de uma bússola e um notebook fechado.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "A rotina inteira",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "escudo", "titulo": "Semana 0", "sub": "uma vez",
+         "detalhe": "Fundação feita (curso 1) e medição ligada: linha de base, regex da marca, URLs-chave, meta de conversão (aulas 1, 2, 3 e 7)."},
+        {"icone": "enviar", "titulo": "Cada página", "sub": "ao publicar",
+         "detalhe": "Checklist de qualidade, 2 ou 3 páginas antigas apontando para a nova e aviso aos buscadores só com URL que responde 200."},
+        {"icone": "calendario", "titulo": "Semanal", "sub": "30 minutos", "forte": true,
+         "detalhe": "Export sem marca, inspeção das URLs-chave, páginas com impressão e sem clique (aula 4), consultas sem página dona (aula 5)."},
+        {"icone": "chat", "titulo": "Mensal", "sub": "bateria de perguntas",
+         "detalhe": "De 20 a 30 perguntas fixas do seu cliente, rodadas à mão em 4 ou 5 assistentes de IA, com planilha de data, assistente e resultado. As respostas variam; por isso a bateria é fixa e repetida."},
+        {"icone": "portao", "titulo": "Dia 30 a 60", "sub": "Plano B",
+         "detalhe": "Cada sintoma tem uma causa provável e uma resposta. Desistir não está na tabela."},
+        {"icone": "pasta", "titulo": "Arquivo", "sub": "para sempre",
+         "detalhe": "O Search Console guarda uns 16 meses. Guarde cada semana numa pasta sua (o resumo.csv e os arquivos sem marca). A ferramenta gsc-historico junta tudo num banco local."}
+      ],
+      "volta": "O que travou na semana volta para a lista de decisões",
+      "legenda": "Pouco por semana, sempre. É a rotina que separa o sinal do susto."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Rotina, Plano B e arquivo",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {"titulo": "Semanal", "sub": "mesmo dia",
+         "texto": ["Escolha um dia e uma hora fixos. Rode o export (ou a planilha), inspecione as URLs-chave e anote uma decisão.", "Uma decisão por semana basta: trocar um título, escrever uma pauta, reforçar uma página."],
+         "exemplo": {"rot": "No INEMA", "texto": "O relatório semanal roda toda terça de manhã e só gera arquivos; quem decide e publica é uma pessoa."}},
+        {"titulo": "Mensal", "sub": "a bateria",
+         "texto": ["Rode as mesmas 20 a 30 perguntas nos mesmos assistentes, em janela anônima, e anote se o seu site aparece, com qual endereço e quem aparece no lugar.", "Ferramenta paga de \"share of voice\" é amostra, não nota oficial. Modelo local não mede o que as IAs reais respondem."]},
+        {"titulo": "Plano B", "sub": "dia 30 a 60",
+         "texto": ["Leia o sintoma antes de agir: poucas indexadas, indexadas sem impressão, impressão sem clique, posição 11 a 30 parada, queda depois de publicar muito.", "Cada um tem uma resposta na tabela abaixo."]},
+        {"titulo": "Arquivo", "sub": "16 meses",
+         "texto": ["Guarde o resumo.csv e os arquivos sem marca de toda semana numa pasta com backup.", "Próximo passo: a ferramenta gsc-historico importa essa pasta num banco local que nunca apaga e gera o relatório de subiu, caiu e pauta."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "A tabela do Plano B, a agenda e o arquivo",
+      "sub": "Troque o que está entre < > pelo seu. Os comandos do gsc-historico são do README da ferramenta; o detalhe dela fica para o curso 7.",
+      "blocos": [
+        {"rot": "Plano B (método inemaSEO)", "icone": "lista",
+         "conteudo": "| sintoma (dia 30–60) | causa provável | o que fazer |\n|---|---|---|\n| poucas páginas indexadas | rastreio, canônico errado, página rasa | inspeção de URL, links internos, noindex nas rasas, pedir indexação de novo |\n| indexadas, quase sem impressão | palavra sem demanda ou falta de autoridade | revalidar com dados do Search Console; trocar o tema; links de volta |\n| impressão sem clique (CTR < 0,5%) | título/descrição fracos | título com promessa específica e número; medir 2 semanas |\n| posição 11–30 parada | conteúdo ok, autoridade baixa | links externos para as vencedoras; seções novas para as consultas que apareceram |\n| queda geral depois de publicar muito | sinal de conteúdo em escala | parar, auditar com o checklist, fundir/remover as fracas, cadência menor |"},
+        {"rot": "Agenda (modelo)", "icone": "calendario",
+         "conteudo": "Toda <terça> <9h>: export sem marca + inspeção das URLs-chave + 1 decisão (30 min)\nTodo dia <1>: bateria de <25> perguntas em <4> assistentes (1 h)\nDia <30> e dia <60> depois de publicar: ler o sintoma e aplicar o Plano B\nToda <sexta>: conferir que a semana foi para a pasta de arquivo"},
+        {"rot": "Terminal · próximo passo: gsc-historico (inemaseo-sistemas)", "icone": "terminal",
+         "conteudo": "# importar a pasta do export semanal (reimportar não duplica)\npython3 gsc_historico.py importar <pasta-do-gsc_semanal> --db dados/gsc.sqlite\n\n# relatório de um site: semana atual × anterior\npython3 gsc_historico.py relatorio --db dados/gsc.sqlite --site <seusite.com> --saida saida/<seusite.com>"}
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {"rot": "Bateria mensal (modelo de planilha)", "html": "<table><tr><th>data</th><th>assistente</th><th>pergunta</th><th>citou o site?</th><th>endereço</th><th>quem apareceu</th></tr><tr><td>01/11</td><td>ChatGPT</td><td>como escolher argila para iniciantes</td><td>não</td><td>-</td><td>loja X</td></tr><tr><td>01/11</td><td>Perplexity</td><td>como escolher argila para iniciantes</td><td>sim</td><td>/argila-iniciantes/</td><td>-</td></tr></table><p>Exemplo inventado. No INEMA, a rodada de julho/2026 deu 0 de 48 respostas neutras no Claude: o zero também é um número para guardar.</p>"},
+          {"rot": "Por que arquivar", "html": "<ul><li>O Search Console guarda uns 16 meses de desempenho.</li><li>Sem arquivo, em 2028 você não consegue comparar com 2026.</li><li>O gsc-historico usa o mesmo formato do gsc_semanal.py e nunca apaga nada.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "simconversa",
+      "titulo": "Conversa simulada: a dona da loja quer desistir no dia 45",
+      "sub": "Conversa simulada para treinar. Escolha a resposta que você daria; o comentário aparece logo depois.",
+      "personagem": {"nome": "Dona de loja de cerâmica online", "papel": "10 páginas publicadas há 45 dias"},
+      "inicio": "abre",
+      "falas": {
+        "abre": {
+          "cliente": "Publiquei 10 páginas há 45 dias e nada aconteceu. Acho que SEO não funciona para mim. Quero parar.",
+          "opcoes": [
+            {"t": "Antes de decidir, vamos olhar o sintoma: quantas das 10 estão indexadas?", "vai": "indexacao", "nota": 2,
+             "comenta": "Plano B começa pelo sintoma. \"Nada aconteceu\" pode ser cinco problemas diferentes, cada um com sua resposta."},
+            {"t": "Então publique mais 50 páginas para compensar.", "vai": "fim-escala", "nota": 0,
+             "comenta": "Volume não cura sintoma. Publicar muito de uma vez é o sinal de conteúdo em escala que derruba sites."},
+            {"t": "Calma, SEO demora. Espere mais seis meses.", "vai": "espera", "nota": 1,
+             "comenta": "Paciência é parte do SEO, mas esperar sem olhar nada não ensina o que corrigir."}
+          ]
+        },
+        "espera": {
+          "cliente": "Esperar seis meses sem saber o quê? Me ofereceram um serviço que indexa tudo em 24 horas.",
+          "opcoes": [
+            {"t": "Tem razão em querer saber. Vamos ver o estado das páginas na inspeção de URL.", "vai": "indexacao", "nota": 1,
+             "comenta": "Você voltou para o sintoma, um passo atrás da resposta direta."},
+            {"t": "Contrate, é rápido.", "vai": "fim-indexador", "nota": 0,
+             "comenta": "Indexador pago é ferramenta típica de spam. O caminho certo é sitemap, inspeção e IndexNow."}
+          ]
+        },
+        "indexacao": {
+          "cliente": "Olhei: 8 das 10 estão indexadas. Apareceram impressões de gente que não buscou a minha marca, mas zero clique.",
+          "opcoes": [
+            {"t": "Bom sinal. Antes de mexer em qualquer coisa, vamos ver de quais consultas vêm as impressões e em que posição.", "vai": "posicao", "nota": 2,
+             "comenta": "Impressão sem marca é o primeiro sinal. A posição diz se o título pesa ou se o problema é outro."},
+            {"t": "Então troque todos os títulos hoje.", "vai": "posicao", "nota": 1,
+             "comenta": "Pode ser a resposta, mas sem ver consultas e posição é chute. E trocar tudo junto impede medir."},
+            {"t": "Zero clique é fracasso. Apague as páginas.", "vai": "fim-apagou", "nota": 0,
+             "comenta": "Você jogou fora o primeiro sinal. No INEMA, o sem marca começou exatamente assim: impressões subindo e 0 clique."}
+          ]
+        },
+        "posicao": {
+          "cliente": "As consultas sem marca estão entre as posições 30 e 60.",
+          "opcoes": [
+            {"t": "Conteúdo indexado, autoridade baixa: links de volta para as melhores e seções novas para as consultas que apareceram.", "vai": "arquivo", "nota": 2,
+             "comenta": "É a linha \"posição parada\" do Plano B. O conteúdo entrou; falta força para subir."},
+            {"t": "Melhor trocar de tema.", "vai": "arquivo", "nota": 1,
+             "comenta": "Trocar de tema é a resposta para indexada sem impressão. Aqui há impressão: o tema tem demanda."},
+            {"t": "Reescreva os títulos para subir o CTR.", "vai": "fim-titulo", "nota": 0,
+             "comenta": "Na posição 30 a 60 quase ninguém vê o título. Reescrever não é ruim, só não resolve esse sintoma (aula 4)."}
+          ]
+        },
+        "arquivo": {
+          "cliente": "Combinado. E como eu vou saber, daqui a um ano e meio, se melhorou?",
+          "opcoes": [
+            {"t": "Guardando o export toda semana numa pasta sua. O Search Console só guarda uns 16 meses.", "vai": "fim-bom", "nota": 2,
+             "comenta": "Arquivo semanal é a única forma de comparar além dos 16 meses."},
+            {"t": "É só abrir o painel, ele guarda tudo.", "vai": "fim-perdeu", "nota": 0,
+             "comenta": "Não guarda. Depois de uns 16 meses, a base do começo some."}
+          ]
+        },
+        "fim-escala": {"fim": true, "titulo": "Mais do mesmo", "texto": "Ela publicou 50 páginas parecidas e as novas pararam em \"detectada, não indexada\". O sintoma original continuou sem diagnóstico."},
+        "fim-indexador": {"fim": true, "titulo": "Atalho caro", "texto": "O serviço prometeu 24 horas. A página continuou fora do índice e o site ganhou um risco que não tinha."},
+        "fim-apagou": {"fim": true, "titulo": "Sinal jogado fora", "texto": "As páginas sumiram junto com as primeiras impressões sem marca. Recomeçar custa mais que esperar o clique."},
+        "fim-titulo": {"fim": true, "titulo": "Esforço no lugar errado", "texto": "Os títulos ficaram melhores, mas na posição 40 ninguém os viu. A posição continuou parada."},
+        "fim-perdeu": {"fim": true, "titulo": "História perdida", "texto": "Um ano e meio depois, a semana de partida não estava mais no painel. Não deu para provar a melhora."},
+        "fim-bom": {"fim": true, "titulo": "Rotina no lugar", "texto": "Sintoma lido, resposta do Plano B aplicada e cada semana guardada. Daqui a um ano e meio, a comparação vai estar na pasta dela."}
+      },
+      "licao": "Plano B é ler o sintoma antes de agir: indexação, impressão, posição, clique. E guardar cada semana, porque o painel esquece."
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: a rotina na agenda",
+      "sub": "Feito uma vez, dura o ano inteiro.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Quatro lembretes", "min": "20 min",
+         "texto": "Ponha na sua agenda os lembretes do modelo: semanal, mensal, dia 30 e dia 60 depois da próxima publicação.",
+         "pronto": "a agenda tem 4 lembretes recorrentes ou datados, cada um com a tarefa escrita."},
+        {"id": "e2", "titulo": "E2 · A pasta de arquivo", "min": "20 min",
+         "texto": "Crie a pasta de arquivo com backup e salve nela a semana mais recente (resumo e arquivo sem marca, ou a planilha).",
+         "pronto": "a pasta existe, tem a 1ª semana salva com a data no nome e está num lugar com cópia de segurança."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "As páginas estão indexadas, com impressão, paradas entre as posições 11 e 30. Qual a resposta do Plano B?",
+         "opcoes": ["Trocar de tema.", "Links de volta para as melhores e seções novas para as consultas que apareceram.", "Apagar e refazer.", "Publicar 50 páginas novas."],
+         "certa": 1, "explica": "Conteúdo ok, autoridade baixa. Trocar de tema é para quem não tem impressão.", "ref": "codigo", "cert": true},
+        {"p": "Por que arquivar o export semanal se o painel já mostra os números?",
+         "opcoes": ["Não precisa.", "Porque o Search Console guarda só uns 16 meses de desempenho.", "Para mandar ao Google.", "Porque o painel é pago."],
+         "certa": 1, "explica": "Depois de uns 16 meses, a semana de partida some. Sem arquivo, não há como comparar.", "ref": "diagrama"},
+        {"p": "Na bateria mensal, por que as perguntas são fixas?",
+         "opcoes": ["Para economizar tempo.", "Porque as respostas das IAs variam; com perguntas fixas, a mudança vem do site e não da pergunta.", "Porque a IA exige.", "Não precisam ser."],
+         "certa": 1, "explica": "Pergunta que muda todo mês não mede nada. Fixa, em 4 ou 5 assistentes, com data e resultado.", "ref": "passos"},
+        {"p": "Queda geral logo depois de publicar muitas páginas. O que fazer?",
+         "opcoes": ["Publicar ainda mais.", "Parar, auditar com o checklist, fundir ou remover as fracas e baixar a cadência.", "Trocar de domínio.", "Comprar links."],
+         "certa": 1, "explica": "É o sinal de conteúdo em escala. A resposta é menos e melhor, não mais.", "ref": "codigo"}
+      ]
+    },
+    {
+      "tipo": "mapa",
+      "titulo": "O mapa da medição",
+      "sub": "Quatro degraus e os exercícios de cada um. Clique num exercício para ver o \"pronto quando\".",
+      "degraus": [
+        {"aula": "linha-de-base", "icone": "marca", "quando": "Semana 1", "titulo": "Base", "sub": "marca × sem marca", "saida": "Planilha com os três baldes de 28 dias.", "passo": "Antes de qualquer decisão, o número de partida. É contra ele que você compara."},
+        {"aula": "export-semanal", "icone": "calendario", "quando": "Semanas 1 e 2", "titulo": "Rotina", "sub": "export e inspeção (aulas 2 e 3)", "saida": "Duas semanas registradas e URLs-chave inspecionadas.", "passo": "Requer a base. O mapa mostra os exercícios da aula 2; o plano abaixo lista todos."},
+        {"aula": "pauta-validada", "icone": "caneta", "quando": "Semanas 3 e 4", "titulo": "Decidir", "sub": "título, pauta, idioma, meta (aulas 4 a 7)", "saida": "Uma troca medida, uma pauta com ativo, a decisão do idioma e a meta ligada.", "passo": "Requer duas semanas de dado. O mapa mostra os exercícios da aula 5; o plano abaixo lista todos."},
+        {"aula": "cadencia-plano-b", "icone": "portao", "quando": "Semana 5 em diante", "titulo": "Plano B", "sub": "agenda e arquivo", "saida": "Rotina na agenda e a 1ª semana arquivada.", "passo": "Requer as decisões. A partir daqui é rotina: uma decisão por semana, a bateria por mês e o Plano B no dia 30 a 60."}
+      ],
+      "resultado": {"titulo": "Ao final do curso", "texto": "O número sem marca medido toda semana, o índice conferido, decisões tomadas com dado e a história guardada para além dos 16 meses.", "total": "16 exercícios"},
+      "rolagem_fim": {"titulo": "A medição inteira", "texto": "Base, rotina, decisão e Plano B. Só suba de degrau quando o \"pronto quando\" do anterior for verdade."},
+      "legenda": "Depois da medição vem o curso 4: ser citado pelas IAs e medir isso nos painéis oficiais."
+    },
+    {
+      "tipo": "gerador",
+      "titulo": "Gere o seu plano com datas",
+      "sub": "Escolha a data de início e quanto tempo você tem por semana. O plano respeita os exercícios que pedem espera.",
+      "curso": "inemaSEO 3 · Medição e Rotina",
+      "horas_padrao": 2,
+      "degraus": [
+        {"titulo": "Aula 1 · Linha de base", "aula": "linha-de-base"},
+        {"titulo": "Aula 2 · Export semanal", "aula": "export-semanal"},
+        {"titulo": "Aula 3 · Inspeção de URL", "aula": "inspecao-url"},
+        {"titulo": "Aula 4 · Título e descrição", "aula": "titulo-descricao"},
+        {"titulo": "Aula 5 · Pauta validada", "aula": "pauta-validada"},
+        {"titulo": "Aula 6 · O caso do espanhol", "aula": "espanhol"},
+        {"titulo": "Aula 7 · Conversão e IA no GA4", "aula": "conversao-ga4"},
+        {"titulo": "Aula 8 · Cadência e Plano B", "aula": "cadencia-plano-b"}
+      ],
+      "txt": {"titulo": "Plano — inemaSEO 3 · Medição e Rotina", "inicio": "Início", "ritmo": "Ritmo", "termino": "Término previsto", "ate": "até", "pronto": "pronto quando", "semanas": "semanas", "travou": "## O que travou e o que eu decidi", "h": "h por semana", "exs": "exercícios"}
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Rotina curta", "texto": "30 minutos por semana, uma bateria por mês, Plano B no dia 30 a 60."},
+        {"t": "Sintoma antes de ação", "texto": "Indexação, impressão, posição, clique: cada um tem sua resposta."},
+        {"t": "Arquive", "texto": "O painel guarda uns 16 meses. A sua pasta guarda para sempre."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "gsc-historico: o Search Console guardado para sempre", "href": "https://github.com/inematds/inemaseo-sistemas/tree/main/ferramentas/gsc-historico", "icone": "pasta"},
+        {"t": "inemaseo-sistemas (ferramentas abertas)", "href": "https://github.com/inematds/inemaseo-sistemas", "icone": "git"},
+        {"t": "Método inemaSEO: Plano B", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "arquivo"},
+        {"t": "Próximo: inemaSEO 4 · Nas IAs", "href": "https://inematds.github.io/formacao-inemaseo-ias-v72/", "icone": "seta"}
+      ]
+    }
+  ]
+}

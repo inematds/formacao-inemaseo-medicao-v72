@@ -1,0 +1,265 @@
+{
+  "slug": "titulo-descricao",
+  "num": 4,
+  "menu": "Title",
+  "titulo": "Impression without a click: rewrite the title and description",
+  "titulo_curto": "Title and description",
+  "minutos": 16,
+  "lead": "A page with lots of impressions and few clicks seems to need a new title. Sometimes it does; sometimes the impressions come from people who searched for your brand and clicked the homepage, and the title is not to blame. In this lesson you look at where the impressions come from before changing anything, rewrite only what's worth it, and measure for two weeks.",
+  "objetivo": "find out where a page's impressions come from before rewriting the title and description, and measure the change for two weeks.",
+  "competencias": [
+    "diagnosticar-impressao-sem-clique",
+    "reescrever-titulo-e-descricao",
+    "medir-troca-de-titulo"
+  ],
+  "aprende": [
+    {
+      "t": "Filter by page and see the queries behind the impressions"
+    },
+    {
+      "t": "When the title isn't the problem"
+    },
+    {
+      "t": "Write a title and description with a specific promise"
+    },
+    {
+      "t": "Measure the change without fooling yourself"
+    }
+  ],
+  "hero_alt": "Window display of a small shop seen from the sidewalk, with people walking by without going in.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Before rewriting, ask where they come from",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Impression without a click",
+          "sub": "the suspicion",
+          "detalhe": "In Performance, sort the pages by impressions and look at the ones with low CTR. The method treats a CTR below 0.5% as a symptom."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "What queries?",
+          "sub": "filter by page",
+          "forte": true,
+          "detalhe": "Click the page and open the Queries tab. Now you see who saw this result: people searching for your brand or people searching for the topic."
+        },
+        {
+          "icone": "marca",
+          "titulo": "It's branded",
+          "sub": "don't touch it",
+          "detalhe": "Someone who searched your name saw this page just below the home page and clicked the home page. The title lost nothing. Leave it as it is."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Non-branded, far down",
+          "sub": "position above 10",
+          "detalhe": "On the second page or beyond, almost no one sees the title. Changing the text doesn't fix it: the problem is authority and content (lesson 8, Plan B)."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "Non-branded, close",
+          "sub": "rewrite and measure",
+          "detalhe": "On the first page, with a topic query and few clicks: that's where the title and description matter. Rewrite with a specific promise and measure for two weeks."
+        }
+      ],
+      "legenda": "Only the last path needs a pen. The others call for patience or another lesson."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "From symptom to measured change",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "The suspicion",
+          "sub": "list of pages",
+          "texto": [
+            "List the pages with the most impressions and low CTR over the last 28 days.",
+            "Use the non-branded file from lesson 2: it already removes the brand queries."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (baseline from 09/23/2026)",
+            "texto": "The page /guias/trilha-iniciantes.html had 730 impressions and 4 clicks at position 1.7. The baseline report flagged it as a \"quick title win\"."
+          }
+        },
+        {
+          "titulo": "The queries",
+          "sub": "the diagnosis changes",
+          "texto": [
+            "Filter by page and read the queries. Add up how much is branded.",
+            "If it's almost all branded, the \"weak title\" diagnosis falls apart."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "When the page's queries were opened, almost all the impressions came from searches for the brand. The title proposal ended up light: say what the page is, for when topic searches show up. It stayed as a draft, with no result measurement."
+          }
+        },
+        {
+          "titulo": "The rewrite",
+          "sub": "specific promise",
+          "texto": [
+            "Title: what the person gets, with a number or a concrete scope, in about 60 characters or fewer. Description: what's on the page, in one or two sentences.",
+            "Don't promise what the page doesn't deliver."
+          ]
+        },
+        {
+          "titulo": "The measurement",
+          "sub": "two weeks",
+          "texto": [
+            "Note the date of the change, the CTR and the position from before. Wait two weeks before judging or changing again.",
+            "If your position changed a lot during the period, the CTR comparison isn't valid."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The swap template and the log",
+      "sub": "Replace what is between < > with your own.",
+      "blocos": [
+        {
+          "rot": "Title and description (template)",
+          "icone": "caneta",
+          "conteudo": "<title><What the person gets>: <concrete angle or number> | <Brand></title>\n<meta name=\"description\" content=\"<What is on the page, in 1 or 2 sentences, with the term the person searched for.>\">"
+        },
+        {
+          "rot": "Swap log (template)",
+          "icone": "lista",
+          "conteudo": "| page | changed on | queries (branded/topic) | before: impr. / CTR / position | 2 weeks later | decision |\n|---|---|---|---|---|---|\n| </page/> | <dd/mm> | <topic> | <i> / <%> / <p> | <i> / <%> / <p> | <keep / revert / test another> |"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Before and after (example)",
+            "html": "<p><b>Before:</b> Complete guide | My Store</p><p><b>After:</b> How to choose clay for beginners: 4 types compared | My Store</p><p>Made-up example from a ceramics shop: the new title says what the person gets and the angle.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>Changing the title of a page that only shows up for the brand</b>: it changes nothing.</li><li><b>Changing it again after 3 days</b>: there's no time to measure.</li><li><b>Clickbait title</b>: the click goes back to Google and the page loses.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: one swap with a diagnosis",
+      "sub": "E2 asks for a two-week wait.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Three suspects diagnosed",
+          "min": "30 min",
+          "texto": "Pick 3 pages with impressions and low CTR. For each one, open the queries and classify them: branded, non-branded far, non-branded close.",
+          "pronto": "each of the 3 pages has its classification and its 3 queries with the most impressions noted down."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · One measured swap",
+          "min": "30 min",
+          "dias": 14,
+          "texto": "On the \"non-branded, close\" page (if there is one), rewrite the title and description and fill in the log. Two weeks later, complete the \"after\" column.",
+          "pronto": "the log has the swap date, before and after numbers, and a written decision; or one sentence saying why none of the 3 needed a swap."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "A page has 730 impressions and 4 clicks at position 1.7. What is the first step?",
+          "opcoes": [
+            "Rewrite the title today.",
+            "Open the page's queries and check whether the impressions are branded or topic-based.",
+            "Delete the page.",
+            "Buy an ad for it."
+          ],
+          "certa": 1,
+          "explica": "At INEMA, the weak-title suspicion fell apart when the queries showed the impressions came from searches for the brand.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "The page's queries are topic-based, but the position is 38. Does changing the title fix it?",
+          "opcoes": [
+            "Yes, always.",
+            "No: at position 38 almost nobody sees the title; the problem is authority and content.",
+            "Yes, if it has an emoji.",
+            "Only if it's short."
+          ],
+          "certa": 1,
+          "explica": "The title matters on the first page. Further down, the way forward is Plan B from lesson 8: backlinks and sections for the queries that showed up.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "You changed the title 3 days ago and the CTR hasn't moved. What should you do?",
+          "opcoes": [
+            "Change it again.",
+            "Wait the full two weeks, with a stable position, before judging.",
+            "Go back to the old one.",
+            "Give up on SEO."
+          ],
+          "certa": 1,
+          "explica": "Two weeks is the minimum for the measurement. Changing earlier mixes both titles into the same number.",
+          "ref": "passos"
+        },
+        {
+          "p": "What makes a title good for the person searching?",
+          "opcoes": [
+            "Repeated keywords.",
+            "A specific, true promise: what the person gets and the angle.",
+            "Capital letters.",
+            "Mystery to spark curiosity."
+          ],
+          "certa": 1,
+          "explica": "A clickbait title wins the click and loses the person right after. A specific promise that is kept is what holds them.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "Queries before pen",
+          "texto": "See where the impressions come from before you rewrite."
+        },
+        {
+          "t": "First page only",
+          "texto": "Title matters near the top; far from it, the problem is something else."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "With an AI summary on the page, studies measure fewer clicks (Pew, 2025: 8% versus 15% without a summary). A lower CTR is not always a bad title."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: title links in results (English)",
+          "href": "https://developers.google.com/search/docs/appearance/title-link",
+          "icone": "caneta"
+        },
+        {
+          "t": "Google: snippets and meta description (English)",
+          "href": "https://developers.google.com/search/docs/appearance/snippet",
+          "icone": "lista"
+        },
+        {
+          "t": "inemaSEO method: Plan B",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        }
+      ]
+    }
+  ]
+}

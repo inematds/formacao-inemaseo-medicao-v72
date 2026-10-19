@@ -1,0 +1,123 @@
+{
+  "slug": "titulo-descricao",
+  "num": 4,
+  "menu": "Título",
+  "titulo": "Impressão sem clique: reescrever título e descrição",
+  "titulo_curto": "Título e descrição",
+  "minutos": 16,
+  "lead": "Página com muita impressão e pouco clique parece pedir título novo. Às vezes pede; às vezes as impressões vêm de quem buscou a sua marca e clicou na home, e o título não tem culpa. Nesta aula você olha de onde vêm as impressões antes de mexer, reescreve só o que vale e mede por duas semanas.",
+  "objetivo": "descobrir de onde vêm as impressões de uma página antes de reescrever título e descrição, e medir a troca por duas semanas.",
+  "competencias": ["diagnosticar-impressao-sem-clique", "reescrever-titulo-e-descricao", "medir-troca-de-titulo"],
+  "aprende": [
+    {"t": "Filtrar a página e ver as consultas por trás das impressões"},
+    {"t": "Quando o título não é o problema"},
+    {"t": "Escrever título e descrição com promessa específica"},
+    {"t": "Medir a troca sem se enganar"}
+  ],
+  "hero_alt": "Vitrine de uma pequena loja vista da calçada, com pessoas passando sem entrar.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Antes de reescrever, pergunte de onde vêm",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "grafico", "titulo": "Impressão sem clique", "sub": "a suspeita",
+         "detalhe": "No Desempenho, ordene as páginas por impressões e olhe as de CTR baixo. O método trata como sintoma o CTR abaixo de 0,5%."},
+        {"icone": "lupa", "titulo": "Que consultas?", "sub": "filtro pela página", "forte": true,
+         "detalhe": "Clique na página e abra a aba Consultas. Agora você vê quem viu esse resultado: gente buscando a sua marca ou gente buscando o assunto."},
+        {"icone": "marca", "titulo": "É marca", "sub": "não mexa",
+         "detalhe": "Quem buscou o seu nome viu essa página logo abaixo da home e clicou na home. O título não perdeu nada. Deixe como está."},
+        {"icone": "relogio", "titulo": "Sem marca, longe", "sub": "posição acima de 10",
+         "detalhe": "Na segunda página ou além, quase ninguém vê o título. Trocar o texto não resolve: o problema é autoridade e conteúdo (aula 8, Plano B)."},
+        {"icone": "caneta", "titulo": "Sem marca, perto", "sub": "reescrever e medir",
+         "detalhe": "Na primeira página, com consulta de assunto e pouco clique: aí o título e a descrição pesam. Reescreva com promessa específica e meça por duas semanas."}
+      ],
+      "legenda": "Só o último caminho pede caneta. Os outros pedem paciência ou outra aula."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Do sintoma à troca medida",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {"titulo": "A suspeita", "sub": "lista de páginas",
+         "texto": ["Liste as páginas com mais impressões e CTR baixo nos últimos 28 dias.", "Use o arquivo sem-marca da aula 2: ele já tira as consultas da marca."],
+         "exemplo": {"rot": "No INEMA (base de 23/09/2026)", "texto": "A página /guias/trilha-iniciantes.html tinha 730 impressões e 4 cliques na posição 1,7. O relatório de base marcou como \"ganho rápido de título\"."}},
+        {"titulo": "As consultas", "sub": "o diagnóstico muda",
+         "texto": ["Filtre pela página e leia as consultas. Some quanto é marca.", "Se é quase tudo marca, o diagnóstico \"título fraco\" cai."],
+         "exemplo": {"rot": "No INEMA", "texto": "Quando as consultas da página foram abertas, quase todas as impressões eram de buscas pela marca. A proposta de título ficou leve: dizer o que a página é, para quando aparecerem buscas de assunto. Ela ficou como rascunho, sem medição de resultado."}},
+        {"titulo": "A reescrita", "sub": "promessa específica",
+         "texto": ["Título: o que a pessoa ganha, com número ou recorte concreto, em até uns 60 caracteres. Descrição: o que tem na página, em uma ou duas frases.", "Nada de prometer o que a página não entrega."]},
+        {"titulo": "A medição", "sub": "duas semanas",
+         "texto": ["Anote a data da troca, o CTR e a posição de antes. Espere duas semanas antes de julgar ou trocar de novo.", "Se a posição mudou muito no período, a comparação de CTR não vale."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "O modelo da troca e o registro",
+      "sub": "Troque o que está entre < > pelo seu.",
+      "blocos": [
+        {"rot": "Título e descrição (modelo)", "icone": "caneta",
+         "conteudo": "<title><O que a pessoa ganha>: <recorte concreto ou número> | <Marca></title>\n<meta name=\"description\" content=\"<O que tem na página, em 1 ou 2 frases, com o termo que a pessoa buscou.>\">"},
+        {"rot": "Registro da troca (modelo)", "icone": "lista",
+         "conteudo": "| página | trocado em | consultas (marca/assunto) | antes: impr. / CTR / posição | 2 semanas depois | decisão |\n|---|---|---|---|---|---|\n| </pagina/> | <dd/mm> | <assunto> | <i> / <%> / <p> | <i> / <%> / <p> | <manter / voltar / testar outro> |"}
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {"rot": "Antes e depois (exemplo)", "html": "<p><b>Antes:</b> Guia completo | Minha Loja</p><p><b>Depois:</b> Como escolher argila para iniciantes: 4 tipos comparados | Minha Loja</p><p>Exemplo inventado de uma loja de cerâmica: o título novo diz o que a pessoa ganha e o recorte.</p>"},
+          {"rot": "Erros comuns", "html": "<ul><li><b>Trocar título de página que só aparece para a marca</b>: não muda nada.</li><li><b>Trocar de novo em 3 dias</b>: não dá tempo de medir.</li><li><b>Título-isca</b>: o clique volta para o Google e a página perde.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: uma troca com diagnóstico",
+      "sub": "O E2 pede duas semanas de espera.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Três suspeitas diagnosticadas", "min": "30 min",
+         "texto": "Escolha 3 páginas com impressão e CTR baixo. Para cada uma, abra as consultas e classifique: marca, sem marca longe, sem marca perto.",
+         "pronto": "cada uma das 3 páginas tem a classificação e as 3 consultas com mais impressões anotadas."},
+        {"id": "e2", "titulo": "E2 · Uma troca medida", "min": "30 min", "dias": 14,
+         "texto": "Na página \"sem marca, perto\" (se houver), reescreva título e descrição e preencha o registro. Duas semanas depois, complete a coluna do depois.",
+         "pronto": "o registro tem data da troca, números de antes e de depois e uma decisão escrita; ou uma frase dizendo por que nenhuma das 3 pedia troca."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Uma página tem 730 impressões e 4 cliques na posição 1,7. Qual o primeiro passo?",
+         "opcoes": ["Reescrever o título hoje.", "Abrir as consultas da página e ver se as impressões são de marca ou de assunto.", "Apagar a página.", "Comprar anúncio para ela."],
+         "certa": 1, "explica": "No INEMA, a suspeita de título fraco caiu quando as consultas mostraram que as impressões eram de buscas pela marca.", "ref": "passos", "cert": true},
+        {"p": "As consultas da página são de assunto, mas a posição é 38. Trocar o título resolve?",
+         "opcoes": ["Sim, sempre.", "Não: na posição 38 quase ninguém vê o título; o problema é autoridade e conteúdo.", "Sim, se tiver emoji.", "Só se for curto."],
+         "certa": 1, "explica": "Título pesa na primeira página. Mais longe, o caminho é o Plano B da aula 8: links de volta e seções para as consultas que apareceram.", "ref": "diagrama"},
+        {"p": "Você trocou o título há 3 dias e o CTR não mudou. O que fazer?",
+         "opcoes": ["Trocar de novo.", "Esperar completar duas semanas, com a posição estável, antes de julgar.", "Voltar o antigo.", "Desistir do SEO."],
+         "certa": 1, "explica": "Duas semanas é o mínimo para a medição. Trocar antes mistura os dois títulos no mesmo número.", "ref": "passos"},
+        {"p": "O que torna um título bom para quem busca?",
+         "opcoes": ["Palavras-chave repetidas.", "Promessa específica e verdadeira: o que a pessoa ganha e o recorte.", "Letras maiúsculas.", "Mistério para dar curiosidade."],
+         "certa": 1, "explica": "Título-isca ganha o clique e perde a pessoa logo depois. Promessa específica e cumprida é o que segura.", "ref": "codigo"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Consulta antes de caneta", "texto": "Veja de onde vêm as impressões antes de reescrever."},
+        {"t": "Só na primeira página", "texto": "Título pesa perto do topo; longe dele, o problema é outro."},
+        {"t": "Régua de 2026", "texto": "Com resumo de IA na página, estudos medem menos cliques (Pew, 2025: 8% contra 15% sem resumo). CTR menor não é sempre título ruim."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Google: links de título nos resultados (inglês)", "href": "https://developers.google.com/search/docs/appearance/title-link", "icone": "caneta"},
+        {"t": "Google: snippets e meta description (inglês)", "href": "https://developers.google.com/search/docs/appearance/snippet", "icone": "lista"},
+        {"t": "Método inemaSEO: Plano B", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "arquivo"}
+      ]
+    }
+  ]
+}

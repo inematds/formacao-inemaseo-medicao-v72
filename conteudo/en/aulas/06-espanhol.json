@@ -1,0 +1,265 @@
+{
+  "slug": "espanhol",
+  "num": 6,
+  "menu": "Languages",
+  "titulo": "Multilingual as a lever: the Spanish case",
+  "titulo_curto": "The Spanish case",
+  "minutos": 17,
+  "lead": "In Spanish, the competition is usually smaller and the demand is big. On INEMA, the page about learning AI in Spanish was indexed on 10/03/2026, and the following week it was already showing up in queries that the Portuguese version didn't reach. In this lesson, you use data to decide whether a page deserves another language, and how to do it without falling into mass translation.",
+  "objetivo": "decide, using real countries and queries, whether a winning page deserves a version in another language, and plan that reviewed version.",
+  "competencias": [
+    "ler-paises-no-search-console",
+    "validar-consulta-no-idioma",
+    "planejar-versao-traduzida"
+  ],
+  "aprende": [
+    {
+      "t": "Reading countries and languages in Search Console"
+    },
+    {
+      "t": "What Spanish showed on INEMA (and what it hasn't shown yet)"
+    },
+    {
+      "t": "Translation is not keyword research"
+    },
+    {
+      "t": "Reviewed version, hreflang, and a destination in the language"
+    }
+  ],
+  "hero_alt": "Two people talk at an outdoor café table in a square, one showing the other their phone.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From the clue in the dashboard to the page in the other language",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Countries",
+          "sub": "the clue",
+          "detalhe": "In Performance, the Countries tab. Impressions from countries that speak another language show that people are already getting close to your topic."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Query in the language",
+          "sub": "real search",
+          "detalhe": "Each language searches differently. In Spanish, \"IA\" and \"inteligencia artificial\" compete; \"desde cero\" shows up where Portuguese says \"do zero\". Validate with autocomplete and Search Console, not with the translator."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "Reviewed page",
+          "sub": "not raw translation",
+          "forte": true,
+          "detalhe": "Translating costs little; the expensive part is reviewing and adapting. Title, address, and examples in the language. A person reviews before publishing, just like in Portuguese."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "hreflang",
+          "sub": "round trip",
+          "detalhe": "Each version points to itself as canonical and to the others with hreflang, only between versions that actually exist (course 1, lesson 5)."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Destination in the language",
+          "sub": "where the person goes",
+          "detalhe": "Without a next step in the visitor's language (course, community, contact), the page educates but doesn't convert. It's the main decision."
+        }
+      ],
+      "volta": "Measured it? The next winning page goes back to the queue",
+      "legenda": "Start with a page that has already shown a signal, not the whole site."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The case and the decision",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "The clue",
+          "sub": "countries",
+          "texto": [
+            "Look at the countries by impressions for the last 28 days.",
+            "A few impressions from abroad is not ready-made demand; it is a signal to test with one page."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (baseline from 08/25 to 09/21/2026)",
+            "texto": "Impressions by country: Brazil 1,449, Portugal 106, Argentina 24, Uruguay 13. A small signal, but from people who speak Spanish."
+          }
+        },
+        {
+          "titulo": "The test",
+          "sub": "one page",
+          "texto": [
+            "Pick a page that already works in your language and make the version in the other one, with its own title and address.",
+            "One well-reviewed page is worth more than ten sloppily translated ones."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "On 09/30/2026, the target queries in Portuguese sat between positions 23 and 69, with 0 clicks. The page /es/aprender-inteligencia-artificial/ was indexed on 10/03; the following week it had 5 to 10 impressions on each Spanish query, at positions 29 to 61."
+          }
+        },
+        {
+          "titulo": "The honest read",
+          "sub": "what is still missing",
+          "texto": [
+            "A Spanish impression is not a click or a conversion. At INEMA, the case shows that the language opened a door; the click has not come yet.",
+            "Measure the new version in the same weekly export, separated by page."
+          ]
+        },
+        {
+          "titulo": "The caution",
+          "sub": "no mass translation",
+          "texto": [
+            "Machine translation published at scale, without review, falls under the scaled content policy.",
+            "One page at a time, reviewed, with a destination in the language."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The hreflang and the version plan",
+      "sub": "Replace what is between < > with your own. The hreflang goes on each page, not in the general layout.",
+      "blocos": [
+        {
+          "rot": "hreflang on each version (the same lines on all three pages)",
+          "icone": "arquivo",
+          "conteudo": "<link rel=\"alternate\" hreflang=\"pt-BR\" href=\"https://www.<seusite.com>/<pagina-pt>/\">\n<link rel=\"alternate\" hreflang=\"es\" href=\"https://www.<seusite.com>/es/<pagina-es>/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://www.<seusite.com>/en/<pagina-en>/\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.<seusite.com>/<pagina-pt>/\">"
+        },
+        {
+          "rot": "Version plan (template)",
+          "icone": "lista",
+          "conteudo": "Source page: </pagina-pt/> (signal: <impressions, queries>)\nLanguage: <es>\nValidated query in the language: <query> (autocomplete: yes/no; Search Console: <impressions>)\nTitle and address in the language: <title> · </es/<slug-no-idioma>/>\nWho reviews: <name>\nDestination in the language: <course / group / contact in Spanish>\nMeasurement: weekly export, new page row, for 4 weeks"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "INEMA countries (28 days through 09/21/2026)",
+            "html": "<table><tr><th>country</th><th>impressions</th></tr><tr><td>Brazil</td><td>1,449</td></tr><tr><td>Portugal</td><td>106</td></tr><tr><td>Argentina</td><td>24</td></tr><tr><td>Uruguay</td><td>13</td></tr></table><p>From the baseline report of 09/23/2026.</p>"
+          },
+          {
+            "rot": "What came next",
+            "html": "<ul><li>10/03: ES page about learning AI indexed.</li><li>Week of 10/05 to 10/11: \"aprender ia\" 10 impressions, \"aprender inteligencia artificial desde cero\" 10, \"cómo aprender ia\" 8, positions 29 to 61.</li><li>Non-branded clicks to inema.club in the same week: 0.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: the decision with data",
+      "sub": "If the dashboard shows no other language, E2 becomes a justified \"not yet.\"",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Countries and languages",
+          "min": "15 min",
+          "texto": "Write down the 5 countries with the most impressions in the last 28 days and any queries in another language that show up.",
+          "pronto": "the list has 5 countries with impressions and the queries in another language (or \"none\")."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · The plan for one version",
+          "min": "40 min",
+          "texto": "Pick a page with a signal and fill in the version plan: validated query in the language, its own title and address, reviewer, and destination in the language.",
+          "pronto": "the plan has the query checked in autocomplete, who reviews, and a destination in the language; or one sentence with the reason to wait."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "The INEMA ES page gained Spanish impressions the week after indexing. What does the case prove?",
+          "opcoes": [
+            "That Spanish guarantees clicks.",
+            "That the language opened a door to queries that Portuguese did not reach; the click has not come yet.",
+            "That it is better to translate the whole site.",
+            "Nothing."
+          ],
+          "certa": 1,
+          "explica": "Impressions of 5 to 10 per query, at positions 29 to 61, and 0 non-branded clicks on the club. A signal, not a final result.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "Why is it not enough to translate the title word for word?",
+          "opcoes": [
+            "Because it looks ugly.",
+            "Because each language searches differently: the query must be validated in the language.",
+            "Because Google forbids it.",
+            "Because hreflang does not allow it."
+          ],
+          "certa": 1,
+          "explica": "\"Do zero\" becomes \"desde cero\"; \"AI\" and \"inteligencia artificial\" compete. Translation is not keyword research.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What is the risk of publishing 200 automatically translated pages all at once?",
+          "opcoes": [
+            "None.",
+            "Falling under the scaled content policy and not getting indexed.",
+            "Spending more on server.",
+            "Just losing the hreflang."
+          ],
+          "certa": 1,
+          "explica": "Mass translation without review is treated as scaled content. One page at a time, reviewed.",
+          "ref": "passos"
+        },
+        {
+          "p": "The ES page turned out great, but the button leads to a community that is only in Portuguese. What's missing?",
+          "opcoes": [
+            "Nothing.",
+            "A destination in the visitor's language: without it, the page educates but doesn't convert.",
+            "More keywords.",
+            "Another hreflang."
+          ],
+          "certa": 1,
+          "explica": "INEMA's own study points to this as the main decision for a version in another language.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "One page with a signal",
+          "texto": "Start with the one that already works, not the whole site."
+        },
+        {
+          "t": "Query in the language",
+          "texto": "Validate the search in that language; don't trust the translator."
+        },
+        {
+          "t": "Review and destination",
+          "texto": "Reviewed by a person, with reciprocal hreflang and a next step in the language."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: localized versions of your page (English)",
+          "href": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+          "icone": "camadas"
+        },
+        {
+          "t": "inemaSEO method: multilingual",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Course 1, lesson 5: sitemaps and hreflang",
+          "href": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/aulas/sitemaps-hreflang/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

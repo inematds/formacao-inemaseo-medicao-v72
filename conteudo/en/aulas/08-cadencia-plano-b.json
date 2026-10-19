@@ -1,0 +1,530 @@
+{
+  "slug": "cadencia-plano-b",
+  "num": 8,
+  "menu": "Routine",
+  "titulo": "Weekly and monthly cadence and the Plan B for days 30 to 60",
+  "titulo_curto": "Cadence and Plan B",
+  "minutos": 20,
+  "lead": "SEO pays off in weeks and months, not days. What makes the result is the routine: one look per week, one battery of checks per month and, between days 30 and 60, an answer for each symptom instead of giving up. And one precaution almost nobody takes: Search Console keeps only about 16 months. If you don't archive, you lose your own history.",
+  "objetivo": "set up the weekly and monthly routine, archive the history and choose the right answer for each symptom from days 30 to 60.",
+  "competencias": [
+    "manter-cadencia-de-medicao",
+    "arquivar-historico-do-search-console",
+    "aplicar-plano-b-por-sintoma",
+    "planejar-rotina-de-medicao"
+  ],
+  "aprende": [
+    {
+      "t": "The cadence: week 0, each page, weekly, monthly"
+    },
+    {
+      "t": "Why archive Search Console"
+    },
+    {
+      "t": "Plan B: one symptom, one answer"
+    },
+    {
+      "t": "Practice in a simulated conversation and build the dated plan"
+    }
+  ],
+  "hero_alt": "A wall calendar with dates circled in pencil, next to a compass and a closed laptop.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "The whole routine",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "escudo",
+          "titulo": "Week 0",
+          "sub": "once",
+          "detalhe": "Foundation done (course 1) and measurement turned on: baseline, brand regex, key URLs, conversion goal (lessons 1, 2, 3 and 7)."
+        },
+        {
+          "icone": "enviar",
+          "titulo": "Every page",
+          "sub": "when you publish",
+          "detalhe": "Quality checklist, 2 or 3 old pages pointing to the new one, and a notice to search engines only with a URL that returns 200."
+        },
+        {
+          "icone": "calendario",
+          "titulo": "Weekly",
+          "sub": "30 minutes",
+          "forte": true,
+          "detalhe": "Non-branded export, inspection of the key URLs, pages with impressions and no clicks (lesson 4), queries with no owner page (lesson 5)."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Monthly",
+          "sub": "question battery",
+          "detalhe": "20 to 30 fixed questions from your customer, run by hand in 4 or 5 AI assistants, with a spreadsheet of date, assistant, and result. Answers vary; that is why the battery is fixed and repeated."
+        },
+        {
+          "icone": "portao",
+          "titulo": "Day 30 to 60",
+          "sub": "Plan B",
+          "detalhe": "Each symptom has a likely cause and a response. Giving up is not in the table."
+        },
+        {
+          "icone": "pasta",
+          "titulo": "Archive",
+          "sub": "forever",
+          "detalhe": "Search Console keeps about 16 months. Save each week in a folder of your own (the resumo.csv and the non-branded files). The gsc-historico tool puts everything into a local database."
+        }
+      ],
+      "volta": "What got stuck during the week goes back to the decision list",
+      "legenda": "A little each week, always. This routine is what separates signal from scare."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Routine, Plan B, and archive",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "Weekly",
+          "sub": "same day",
+          "texto": [
+            "Pick a fixed day and time. Run the export (or the spreadsheet), inspect the key URLs, and write down one decision.",
+            "One decision per week is enough: change a title, write a topic, strengthen a page."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "The weekly report runs every Tuesday morning and only generates files; a person decides and publishes."
+          }
+        },
+        {
+          "titulo": "Monthly",
+          "sub": "the battery",
+          "texto": [
+            "Run the same 20 to 30 questions in the same assistants, in an incognito window, and note whether your site appears, with which address, and who appears in its place.",
+            "A paid \"share of voice\" tool is a sample, not an official score. A local model does not measure what the real AIs answer."
+          ]
+        },
+        {
+          "titulo": "Plan B",
+          "sub": "day 30 to 60",
+          "texto": [
+            "Read the symptom before acting: few indexed, indexed with no impressions, impressions with no clicks, position 11 to 30 stalled, a drop after publishing a lot.",
+            "Each one has a response in the table below."
+          ]
+        },
+        {
+          "titulo": "Archive",
+          "sub": "16 months",
+          "texto": [
+            "Save the resumo.csv and the non-branded files from every week in a folder with a backup.",
+            "Next step: the gsc-historico tool imports that folder into a local database that never deletes anything and generates the up, down, and topic report."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The Plan B table, the schedule, and the archive",
+      "sub": "Replace what is between < > with your own. The gsc-historico commands come from the tool's README; the details of the tool are covered in course 7.",
+      "blocos": [
+        {
+          "rot": "Plan B (inemaSEO method)",
+          "icone": "lista",
+          "conteudo": "| symptom (day 30–60) | likely cause | what to do |\n|---|---|---|\n| few pages indexed | crawling, wrong canonical, thin page | URL Inspection, internal links, noindex on the thin ones, request indexing again |\n| indexed, almost no impressions | keyword with no demand or lack of authority | revalidate with Search Console data; change the topic; backlinks |\n| impressions with no clicks (CTR < 0.5%) | weak title/description | title with a specific promise and a number; measure for 2 weeks |\n| position 11–30 stalled | content ok, low authority | external links to the winners; new sections for the queries that showed up |\n| overall drop after publishing a lot | signal of content at scale | stop, audit with the checklist, merge/remove the weak ones, lower cadence |"
+        },
+        {
+          "rot": "Schedule (template)",
+          "icone": "calendario",
+          "conteudo": "Every <Tuesday> <9am>: non-branded export + inspection of the key URLs + 1 decision (30 min)\nEvery day <1>: battery of <25> questions in <4> assistants (1 h)\nDay <30> and day <60> after publishing: read the symptom and apply Plan B\nEvery <Friday>: check that the week went into the archive folder"
+        },
+        {
+          "rot": "Terminal · next step: gsc-historico (inemaseo-sistemas)",
+          "icone": "terminal",
+          "conteudo": "# importar a pasta do export semanal (reimportar não duplica)\npython3 gsc_historico.py importar <pasta-do-gsc_semanal> --db dados/gsc.sqlite\n\n# relatório de um site: semana atual × anterior\npython3 gsc_historico.py relatorio --db dados/gsc.sqlite --site <seusite.com> --saida saida/<seusite.com>"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Monthly battery (spreadsheet template)",
+            "html": "<table><tr><th>date</th><th>assistant</th><th>question</th><th>cited the site?</th><th>address</th><th>who showed up</th></tr><tr><td>01/11</td><td>ChatGPT</td><td>how to choose clay for beginners</td><td>no</td><td>-</td><td>store X</td></tr><tr><td>01/11</td><td>Perplexity</td><td>how to choose clay for beginners</td><td>yes</td><td>/argila-iniciantes/</td><td>-</td></tr></table><p>Made-up example. At INEMA, the July/2026 round gave 0 out of 48 neutral answers on Claude: zero is also a number worth keeping.</p>"
+          },
+          {
+            "rot": "Why archive",
+            "html": "<ul><li>Search Console keeps about 16 months of performance data.</li><li>Without an archive, in 2028 you can't compare against 2026.</li><li>gsc-historico uses the same format as gsc_semanal.py and never deletes anything.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "simconversa",
+      "titulo": "Simulated conversation: the store owner wants to quit on day 45",
+      "sub": "Simulated conversation for practice. Pick the answer you would give; the comment appears right after.",
+      "personagem": {
+        "nome": "Online ceramics store owner",
+        "papel": "10 pages published 45 days ago"
+      },
+      "inicio": "abre",
+      "falas": {
+        "abre": {
+          "cliente": "I published 10 pages 45 days ago and nothing happened. I think SEO doesn't work for me. I want to stop.",
+          "opcoes": [
+            {
+              "t": "Before you decide, let's look at the symptom: how many of the 10 are indexed?",
+              "vai": "indexacao",
+              "nota": 2,
+              "comenta": "Plan B starts with the symptom. \"Nothing happened\" can be five different problems, each with its own answer."
+            },
+            {
+              "t": "Then publish 50 more pages to make up for it.",
+              "vai": "fim-escala",
+              "nota": 0,
+              "comenta": "Volume doesn't cure a symptom. Publishing a lot at once is the signal of content at scale that takes sites down."
+            },
+            {
+              "t": "Relax, SEO takes time. Wait another six months.",
+              "vai": "espera",
+              "nota": 1,
+              "comenta": "Patience is part of SEO, but waiting without looking at anything doesn't teach you what to fix."
+            }
+          ]
+        },
+        "espera": {
+          "cliente": "Wait six months without knowing what for? I was offered a service that indexes everything in 24 hours.",
+          "opcoes": [
+            {
+              "t": "You're right to want to know. Let's check the state of the pages in URL Inspection.",
+              "vai": "indexacao",
+              "nota": 1,
+              "comenta": "You went back to the symptom, one step behind the direct answer."
+            },
+            {
+              "t": "Hire them, it's fast.",
+              "vai": "fim-indexador",
+              "nota": 0,
+              "comenta": "A paid indexer is a typical spam tool. The right path is sitemap, inspection and IndexNow."
+            }
+          ]
+        },
+        "indexacao": {
+          "cliente": "I checked: 8 of the 10 are indexed. Impressions showed up from people who didn't search for my brand, but zero clicks.",
+          "opcoes": [
+            {
+              "t": "Good sign. Before changing anything, let's see which queries the impressions come from and at what position.",
+              "vai": "posicao",
+              "nota": 2,
+              "comenta": "Non-branded impressions are the first sign. The position tells you whether the title matters or the problem is something else."
+            },
+            {
+              "t": "Then change all the titles today.",
+              "vai": "posicao",
+              "nota": 1,
+              "comenta": "It could be the answer, but without seeing queries and position it's a guess. And changing everything at once keeps you from measuring."
+            },
+            {
+              "t": "Zero clicks is a failure. Delete the pages.",
+              "vai": "fim-apagou",
+              "nota": 0,
+              "comenta": "You threw away the first sign. At INEMA, non-branded started exactly like this: impressions rising and 0 clicks."
+            }
+          ]
+        },
+        "posicao": {
+          "cliente": "The non-branded queries are between positions 30 and 60.",
+          "opcoes": [
+            {
+              "t": "Indexed content, low authority: links back to the best pages and new sections for the queries that showed up.",
+              "vai": "arquivo",
+              "nota": 2,
+              "comenta": "That's the \"stuck position\" line of Plan B. The content got in; it lacks the strength to climb."
+            },
+            {
+              "t": "Better to switch topics.",
+              "vai": "arquivo",
+              "nota": 1,
+              "comenta": "Switching topics is the answer for indexed with no impressions. Here there are impressions: the topic has demand."
+            },
+            {
+              "t": "Rewrite the titles to raise the CTR.",
+              "vai": "fim-titulo",
+              "nota": 0,
+              "comenta": "At position 30 to 60 almost nobody sees the title. Rewriting isn't bad, it just doesn't solve this symptom (lesson 4)."
+            }
+          ]
+        },
+        "arquivo": {
+          "cliente": "Agreed. And how will I know, a year and a half from now, whether it improved?",
+          "opcoes": [
+            {
+              "t": "By saving the export every week in a folder of your own. Search Console only keeps about 16 months.",
+              "vai": "fim-bom",
+              "nota": 2,
+              "comenta": "A weekly archive is the only way to compare beyond 16 months."
+            },
+            {
+              "t": "Just open the dashboard, it keeps everything.",
+              "vai": "fim-perdeu",
+              "nota": 0,
+              "comenta": "It doesn't. After about 16 months, the early data is gone."
+            }
+          ]
+        },
+        "fim-escala": {
+          "fim": true,
+          "titulo": "More of the same",
+          "texto": "She published 50 similar pages and the new ones stalled at \"Discovered – currently not indexed\". The original symptom was still undiagnosed."
+        },
+        "fim-indexador": {
+          "fim": true,
+          "titulo": "Expensive shortcut",
+          "texto": "The service promised 24 hours. The page stayed out of the index and the site picked up a risk it didn't have before."
+        },
+        "fim-apagou": {
+          "fim": true,
+          "titulo": "Signal thrown away",
+          "texto": "The pages vanished along with the first non-branded impressions. Starting over costs more than waiting for the click."
+        },
+        "fim-titulo": {
+          "fim": true,
+          "titulo": "Effort in the wrong place",
+          "texto": "The titles got better, but at position 40 nobody saw them. The position stayed put."
+        },
+        "fim-perdeu": {
+          "fim": true,
+          "titulo": "Lost history",
+          "texto": "A year and a half later, the starting week was no longer in the dashboard. There was no way to prove the improvement."
+        },
+        "fim-bom": {
+          "fim": true,
+          "titulo": "Routine in place",
+          "texto": "Symptom read, Plan B response applied, and every week saved. A year and a half from now, the comparison will be in her folder."
+        }
+      },
+      "licao": "Plan B means reading the symptom before you act: indexing, impressions, position, clicks. And saving every week, because the dashboard forgets."
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: the routine on your calendar",
+      "sub": "Do it once, and it lasts the whole year.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Four reminders",
+          "min": "20 min",
+          "texto": "Put the template's reminders on your calendar: weekly, monthly, day 30 and day 60 after your next publication.",
+          "pronto": "your calendar has 4 recurring or dated reminders, each with the task written out."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · The archive folder",
+          "min": "20 min",
+          "texto": "Create the archive folder with a backup and save the most recent week in it (summary and non-branded file, or the spreadsheet).",
+          "pronto": "the folder exists, has the 1st week saved with the date in the name, and is in a place with a backup copy."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "The pages are indexed, have impressions, and are stuck between positions 11 and 30. What is the Plan B response?",
+          "opcoes": [
+            "Change the topic.",
+            "Links back to the best ones and new sections for the queries that showed up.",
+            "Delete and redo.",
+            "Publish 50 new pages."
+          ],
+          "certa": 1,
+          "explica": "Content is fine, authority is low. Changing the topic is for those with no impressions.",
+          "ref": "codigo",
+          "cert": true
+        },
+        {
+          "p": "Why archive the weekly export if the dashboard already shows the numbers?",
+          "opcoes": [
+            "It doesn't need to.",
+            "Because Search Console keeps only about 16 months of performance data.",
+            "To send to Google.",
+            "Because the dashboard is paid."
+          ],
+          "certa": 1,
+          "explica": "After about 16 months, the starting week disappears. Without an archive, there is no way to compare.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "In the monthly battery, why are the questions fixed?",
+          "opcoes": [
+            "To save time.",
+            "Because AI answers vary; with fixed questions, the change comes from the site and not from the question.",
+            "Because the AI requires it.",
+            "They don't have to be."
+          ],
+          "certa": 1,
+          "explica": "A question that changes every month measures nothing. Keep it fixed, across 4 or 5 assistants, with a date and a result.",
+          "ref": "passos"
+        },
+        {
+          "p": "A general drop right after publishing many pages. What should you do?",
+          "opcoes": [
+            "Publish even more.",
+            "Stop, audit with the checklist, merge or remove the weak ones, and lower the cadence.",
+            "Change domains.",
+            "Buy links."
+          ],
+          "certa": 1,
+          "explica": "It is the sign of content at scale. The response is fewer and better, not more.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "mapa",
+      "titulo": "The measurement map",
+      "sub": "Four steps and the exercises for each one. Click an exercise to see its \"done when\".",
+      "degraus": [
+        {
+          "aula": "linha-de-base",
+          "icone": "marca",
+          "quando": "Week 1",
+          "titulo": "Base",
+          "sub": "branded × non-branded",
+          "saida": "Spreadsheet with the three 28-day buckets.",
+          "passo": "Before any decision, the starting number. It is what you compare against."
+        },
+        {
+          "aula": "export-semanal",
+          "icone": "calendario",
+          "quando": "Weeks 1 and 2",
+          "titulo": "Routine",
+          "sub": "export and inspection (lessons 2 and 3)",
+          "saida": "Two weeks logged and key URLs inspected.",
+          "passo": "Needs the groundwork. The map shows the lesson 2 exercises; the plan below lists them all."
+        },
+        {
+          "aula": "pauta-validada",
+          "icone": "caneta",
+          "quando": "Weeks 3 and 4",
+          "titulo": "Decide",
+          "sub": "title, topic list, language, goal (lessons 4 to 7)",
+          "saida": "One measured change, a validated topic, the language decision, and the goal connected.",
+          "passo": "Needs two weeks of data. The map shows the lesson 5 exercises; the plan below lists them all."
+        },
+        {
+          "aula": "cadencia-plano-b",
+          "icone": "portao",
+          "quando": "Week 5 onward",
+          "titulo": "Plan B",
+          "sub": "calendar and archive",
+          "saida": "Routine on your calendar and the first week archived.",
+          "passo": "Needs the decisions. From here on it's routine: one decision per week, the battery once a month, and Plan B on day 30 to 60."
+        }
+      ],
+      "resultado": {
+        "titulo": "By the end of the course",
+        "texto": "The non-branded number measured every week, the index checked, decisions made with data, and your history kept beyond the 16 months.",
+        "total": "16 exercises"
+      },
+      "rolagem_fim": {
+        "titulo": "The whole measurement",
+        "texto": "Foundation, routine, decision, and Plan B. Only move up a step when the \"done when\" of the previous one is true."
+      },
+      "legenda": "After measurement comes course 4: getting cited by AIs and measuring that in the official dashboards."
+    },
+    {
+      "tipo": "gerador",
+      "titulo": "Generate your plan with dates",
+      "sub": "Pick the start date and how much time you have per week. The plan respects the exercises that call for waiting.",
+      "curso": "inemaSEO 3 · Measurement and Routine",
+      "horas_padrao": 2,
+      "degraus": [
+        {
+          "titulo": "Lesson 1 · Baseline",
+          "aula": "linha-de-base"
+        },
+        {
+          "titulo": "Lesson 2 · Weekly export",
+          "aula": "export-semanal"
+        },
+        {
+          "titulo": "Lesson 3 · URL Inspection",
+          "aula": "inspecao-url"
+        },
+        {
+          "titulo": "Lesson 4 · Title and description",
+          "aula": "titulo-descricao"
+        },
+        {
+          "titulo": "Lesson 5 · Validated topic",
+          "aula": "pauta-validada"
+        },
+        {
+          "titulo": "Lesson 6 · The Spanish case",
+          "aula": "espanhol"
+        },
+        {
+          "titulo": "Lesson 7 · Conversion and AI in GA4",
+          "aula": "conversao-ga4"
+        },
+        {
+          "titulo": "Lesson 8 · Cadence and Plan B",
+          "aula": "cadencia-plano-b"
+        }
+      ],
+      "txt": {
+        "titulo": "Plan — inemaSEO 3 · Measurement and Routine",
+        "inicio": "Start",
+        "ritmo": "Pace",
+        "termino": "Expected finish",
+        "ate": "by",
+        "pronto": "done when",
+        "semanas": "weeks",
+        "travou": "## What got stuck and what I decided",
+        "h": "h per week",
+        "exs": "exercises"
+      }
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Take with you",
+      "itens": [
+        {
+          "t": "Short routine",
+          "texto": "30 minutes a week, one battery a month, Plan B on day 30 to 60."
+        },
+        {
+          "t": "Symptom before action",
+          "texto": "Indexing, impressions, position, clicks: each has its own answer."
+        },
+        {
+          "t": "Archive",
+          "texto": "The dashboard keeps about 16 months. Your folder keeps it forever."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "gsc-historico: Search Console kept forever",
+          "href": "https://github.com/inematds/inemaseo-sistemas/tree/main/ferramentas/gsc-historico",
+          "icone": "pasta"
+        },
+        {
+          "t": "inemaseo-sistemas (open tools)",
+          "href": "https://github.com/inematds/inemaseo-sistemas",
+          "icone": "git"
+        },
+        {
+          "t": "inemaSEO method: Plan B",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Next: inemaSEO 4 · In the AIs",
+          "href": "https://inematds.github.io/formacao-inemaseo-ias-v72/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

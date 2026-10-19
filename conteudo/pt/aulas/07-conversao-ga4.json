@@ -1,0 +1,125 @@
+{
+  "slug": "conversao-ga4",
+  "num": 7,
+  "menu": "Conversão",
+  "titulo": "Meta de conversão e tráfego vindo de IA no GA4",
+  "titulo_curto": "Conversão e IA no GA4",
+  "minutos": 18,
+  "lead": "O Search Console mostra quem chegou da busca. Ele não diz o que a pessoa fez depois, nem quem veio de um assistente de IA. Para isso existe o analytics: uma meta de conversão com a página de origem e um canal próprio para as visitas vindas do ChatGPT, do Perplexity, do Copilot e companhia. Parte delas cai em \"Direto\"; a aula mostra por quê.",
+  "objetivo": "criar uma meta de conversão com a página de origem e um canal próprio para as visitas vindas de assistentes de IA no GA4.",
+  "competencias": ["criar-meta-de-conversao", "separar-trafego-de-ia", "ler-limites-do-referrer"],
+  "aprende": [
+    {"t": "Por que visita não é resultado"},
+    {"t": "Uma meta de conversão com a página de origem"},
+    {"t": "Um canal \"Assistentes de IA\" no GA4"},
+    {"t": "Por que parte do tráfego de IA aparece como Direto"}
+  ],
+  "hero_alt": "Cliente entra por uma porta de loja com sininho, vista de dentro da loja.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Da visita à conversão, por origem",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "usuario", "titulo": "Visita", "sub": "alguém chegou",
+         "detalhe": "Toda visita tem uma origem, quando o navegador conta de onde veio. O GA4 agrupa as origens em canais: busca orgânica, referência, direto e outros."},
+        {"icone": "lupa", "titulo": "Busca orgânica", "sub": "Google, Bing",
+         "detalhe": "É o mesmo público do Search Console, visto do lado do site. Aqui você enxerga o que a pessoa fez depois do clique."},
+        {"icone": "robo", "titulo": "Assistentes de IA", "sub": "canal próprio", "forte": true,
+         "itens": [{"icone": "chat", "t": "chatgpt.com"}, {"icone": "chat", "t": "perplexity.ai"}, {"icone": "chat", "t": "copilot · gemini · claude.ai"}],
+         "detalhe": "Visitas que vêm de um assistente com link. Sem um canal próprio, elas se misturam em \"Referência\". O canal junta todas e deixa comparar com a busca."},
+        {"icone": "x", "titulo": "Direto", "sub": "origem perdida",
+         "detalhe": "Quando o aplicativo ou o navegador não manda a origem, a visita cai em Direto. Parte do tráfego de IA vai parar aqui, e não há número confiável de quanto."},
+        {"icone": "alvo", "titulo": "Conversão", "sub": "a meta",
+         "detalhe": "A ação que importa para você (entrar na comunidade, pedir orçamento, comprar), marcada como evento-chave. Cruzada com a página de origem, diz qual página traz gente, não só visita."}
+      ],
+      "legenda": "O número de IA no GA4 é um piso: o que tem origem marcada. O resto está escondido em Direto."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Meta e canal em quatro passos",
+      "sub": "Os nomes dos menus mudam com o tempo; procure pelo nome da função. Clique em cada etapa.",
+      "passos": [
+        {"titulo": "A meta", "sub": "uma ação só",
+         "texto": ["Escolha uma ação que mostra interesse real: entrar na comunidade, pedir orçamento, baixar o material.", "Uma meta bem escolhida vale mais que dez eventos que ninguém olha."],
+         "exemplo": {"rot": "No INEMA", "texto": "O método prevê o evento \"Entrar na comunidade\" com a página de origem. No analytics do INEMA (Plausible), essa meta ainda aparecia como pendência em outubro/2026. Meta é a parte que mais fica para depois; ponha na agenda."}},
+        {"titulo": "O evento-chave", "sub": "no GA4",
+         "texto": ["Dispare um evento quando a ação acontece e marque esse evento como evento-chave na administração do GA4.", "Confira no relatório de Tempo real que ele aparece quando você mesmo clica."]},
+        {"titulo": "O canal de IA", "sub": "grupo de canais",
+         "texto": ["Na administração, procure Grupos de canais e crie um grupo personalizado a partir do padrão.", "Adicione o canal \"Assistentes de IA\" com a regra de origem da regex abaixo e coloque-o acima de Referência; a ordem decide qual regra pega a visita."]},
+        {"titulo": "A leitura", "sub": "sem comparar estudos",
+         "texto": ["Cruze canal e página de destino com o evento-chave. Pergunte: qual página traz gente que converte?", "Não compare o seu número com estudos: as fatias do ChatGPT no tráfego de IA vão de 63% a 92% conforme a amostra."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "A regra do canal e o evento",
+      "sub": "Modelos para copiar. Troque o que está entre < > pelo seu.",
+      "blocos": [
+        {"rot": "Regex de origem do canal \"Assistentes de IA\"", "icone": "lupa",
+         "conteudo": "chatgpt\\.com|perplexity|copilot|gemini\\.google|claude\\.ai"},
+        {"rot": "Evento de conversão com a página de origem (gtag, modelo)", "icone": "terminal",
+         "conteudo": "document.querySelector('<seletor do botão>').addEventListener('click', function () {\n  gtag('event', '<entrar_comunidade>', { pagina_origem: location.pathname });\n});"},
+        {"rot": "Registro mensal (modelo)", "icone": "lista",
+         "conteudo": "| mês | canal | visitas | conversões | página que mais converteu |\n|---|---|---|---|---|\n| <mm/aaaa> | Busca orgânica | <n> | <n> | </pagina/> |\n| <mm/aaaa> | Assistentes de IA | <n> | <n> | </pagina/> |\n| <mm/aaaa> | Direto | <n> | <n> | </pagina/> |"}
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {"rot": "Leitura de um mês (exemplo)", "html": "<table><tr><th>canal</th><th>visitas</th><th>conversões</th></tr><tr><td>Busca orgânica</td><td>420</td><td>9</td></tr><tr><td>Assistentes de IA</td><td>35</td><td>3</td></tr><tr><td>Direto</td><td>310</td><td>4</td></tr></table><p>Números inventados para ensinar a leitura. Poucas visitas de IA, mas proporção de conversão alta: vale olhar quais páginas elas abriram.</p>"},
+          {"rot": "Limites honestos", "html": "<ul><li><b>Piso, não total</b>: visita sem origem cai em Direto.</li><li><b>Perplexity</b>: segundo relato de blog, o GA4 não o reconhece sozinho; por isso ele está na regex.</li><li><b>Estudos divergem</b>: a fatia do ChatGPT vai de 63% a 92% conforme a amostra; não use como meta.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: meta e canal ligados",
+      "sub": "Sem GA4? O mesmo vale para o Plausible ou outro analytics: meta + origem.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · O evento-chave", "min": "40 min",
+         "texto": "Escolha a ação que importa, dispare o evento com a página de origem e marque-o como evento-chave.",
+         "pronto": "você clicou no botão e o evento apareceu no relatório de Tempo real, com a página de origem."},
+        {"id": "e2", "titulo": "E2 · O canal de IA", "min": "30 min",
+         "texto": "Crie o grupo de canais personalizado com o canal \"Assistentes de IA\" acima de Referência.",
+         "pronto": "o grupo aparece nos relatórios de aquisição; se já houve visita de chatgpt.com ou perplexity.ai, ela está no canal novo, e não em Referência."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "O GA4 mostra 35 visitas de assistentes de IA no mês. Esse é o total que veio de IA?",
+         "opcoes": ["Sim, exato.", "Não: é um piso; visitas sem origem marcada caem em Direto.", "Não: é o dobro.", "Depende do Search Console."],
+         "certa": 1, "explica": "Aplicativos e navegadores nem sempre mandam a origem. O número real é maior, e não há medida confiável de quanto.", "ref": "diagrama", "cert": true},
+        {"p": "Por que o canal de IA precisa ficar acima de Referência?",
+         "opcoes": ["Por estética.", "Porque as regras são lidas em ordem: se Referência vem antes, pega a visita primeiro.", "Porque o Google exige.", "Não precisa."],
+         "certa": 1, "explica": "A primeira regra que bate leva a visita. O canal específico vem antes do genérico.", "ref": "passos"},
+        {"p": "Um estudo diz que o ChatGPT é 92% do tráfego de IA; outro diz 63%. Qual usar como meta?",
+         "opcoes": ["O maior.", "O menor.", "Nenhum: cada estudo tem uma amostra; meça o seu e compare com você mesmo.", "A média."],
+         "certa": 2, "explica": "Fatias de estudos diferentes não se comparam. O seu histórico mês a mês é a régua.", "ref": "passos"},
+        {"p": "Por que a meta precisa da página de origem?",
+         "opcoes": ["Para enfeitar o relatório.", "Para saber qual página traz gente que age, não só visita.", "Porque o GA4 não funciona sem.", "Para o Search Console."],
+         "certa": 1, "explica": "É o elo entre o SEO (que traz a visita) e o resultado (a ação). Sem ele, a página de mais visita parece a melhor.", "ref": "diagrama"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Uma meta", "texto": "A ação que importa, com a página de origem."},
+        {"t": "Canal próprio", "texto": "Assistentes de IA separados de Referência, acima dela na ordem."},
+        {"t": "Régua de 2026", "texto": "O número de IA no analytics é piso. Painéis oficiais de citação (Search Console de IA generativa, Bing AI Performance) são assunto do curso 4."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "GA4: grupos de canais personalizados (ajuda do Google)", "href": "https://support.google.com/analytics/answer/13051316", "icone": "grafico"},
+        {"t": "GA4: eventos-chave (ajuda do Google)", "href": "https://support.google.com/analytics/answer/13128484", "icone": "alvo"},
+        {"t": "Método inemaSEO: etapa 3", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "arquivo"}
+      ]
+    }
+  ]
+}

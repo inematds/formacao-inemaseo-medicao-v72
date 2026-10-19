@@ -1,0 +1,275 @@
+{
+  "slug": "export-semanal",
+  "num": 2,
+  "menu": "Export",
+  "titulo": "Export semanal que separa la marca y las consultas anónimas",
+  "titulo_curto": "Export semanal",
+  "minutos": 18,
+  "lead": "La línea base es una foto. Para ver la película, necesitas la misma foto cada semana, en el mismo formato. El script gsc_semanal.py hace eso: separa marca, sin marca y anónimas y guarda una línea por semana. Sin credencial de Google, sirve la misma hoja de cálculo hecha a mano.",
+  "objetivo": "armar el export semanal que guarda total, marca, sin marca y anónimas en una línea por semana.",
+  "competencias": [
+    "exportar-semana-sem-marca",
+    "ler-resumo-semanal",
+    "comparar-semanas"
+  ],
+  "aprende": [
+    {
+      "t": "Qué guarda gsc_semanal.py y por qué"
+    },
+    {
+      "t": "Leer el resumo.csv semana a semana"
+    },
+    {
+      "t": "El arco real de INEMA: las impresiones suben, los clics sin marca no"
+    },
+    {
+      "t": "Hacer lo mismo a mano cuando no hay credencial"
+    }
+  ],
+  "hero_alt": "Estante con archivadores organizados por color y un portátil abierto que muestra una hoja de cálculo.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "De la semana en el panel a la línea en el archivo",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "grafico",
+          "titulo": "Search Console",
+          "sub": "7 días, hasta hace 2 días",
+          "detalhe": "El panel se atrasa unos 2 días. El script toma los 7 días que terminan anteayer, por eso la semana cierra siempre el mismo día de la semana."
+        },
+        {
+          "icone": "marca",
+          "titulo": "Regex de la marca",
+          "sub": "GSC_MARCA",
+          "detalhe": "La misma regex de la lección 1. Cada consulta se prueba contra ella: coincidió, es de marca; no coincidió, es sin marca."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Tres grupos",
+          "sub": "marca · sin marca · anónimas",
+          "forte": true,
+          "detalhe": "Marca y sin marca vienen de la tabla por consulta. Anónimas es lo que sobra: total menos los dos. El script también cuenta cuántas consultas sin marca diferentes aparecieron."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "resumo.csv",
+          "sub": "una línea por semana",
+          "itens": [
+            {
+              "icone": "lista",
+              "t": "resumo.csv: la serie"
+            },
+            {
+              "icone": "lista",
+              "t": "[data]_[site]_sem-marca.csv: consulta y página"
+            }
+          ],
+          "detalhe": "El resumen crece una línea por semana y por sitio. El archivo sem-marca guarda cada consulta con la página, clics, impresiones, CTR y posición: es la materia prima de las lecciones 4 y 5."
+        }
+      ],
+      "volta": "Cada semana, el mismo día: una línea más",
+      "legenda": "Una línea por semana es poco trabajo y se vuelve el historial que el panel no guarda."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Cómo funciona el export",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "Credencial",
+          "sub": "solo lectura",
+          "texto": [
+            "El script usa el login de gcloud con el alcance de lectura de Search Console y un proyecto de Google Cloud para la cuota.",
+            "Si no tienes eso, salta al paso 4: la hoja de cálculo hecha a mano da el mismo resultado, solo que más despacio."
+          ]
+        },
+        {
+          "titulo": "Variables",
+          "sub": "sitios y marca",
+          "texto": [
+            "GSC_SITES lleva las propiedades (ej.: sc-domain:tusitio.com). GSC_MARCA lleva la regex. GSC_QUOTA_PROJ lleva el proyecto de la cuota.",
+            "Ninguna clave queda en el código."
+          ]
+        },
+        {
+          "titulo": "Ejecutar",
+          "sub": "cada semana",
+          "texto": [
+            "Ejecútalo el mismo día de la semana. Ejecutarlo en días seguidos crea semanas que comparten días; no sumes esas dos.",
+            "El resumen.csv solo gana filas; no se borra nada."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "Las semanas 27/09–03/10 y 28/09–04/10 comparten seis días. Están las dos en el archivo, pero la comparación usa semanas que no se superponen."
+          }
+        },
+        {
+          "titulo": "A mano",
+          "sub": "sin credencial",
+          "texto": [
+            "En el panel, ventana de 7 días, filtro de regex \"coincide\" y \"no coincide\". Copia los números a la hoja de cálculo de la clase 1.",
+            "Lleva 10 minutos por semana."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El comando y el archivo que graba",
+      "sub": "Comando del script abierto gsc_semanal.py. Cambia lo que está entre < > por lo tuyo. Necesita credencial de Google; sin ella, usa la hoja de cálculo.",
+      "blocos": [
+        {
+          "rot": "Terminal · login de lectura (una vez)",
+          "icone": "terminal",
+          "conteudo": "gcloud auth application-default login \\\n  --scopes=https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/cloud-platform"
+        },
+        {
+          "rot": "Terminal · export de la semana",
+          "icone": "terminal",
+          "conteudo": "export GSC_SITES=\"sc-domain:<seusite.com>\"\nexport GSC_MARCA=\"<seusite>|<seu nome>|<erro comum>\"\nexport GSC_QUOTA_PROJ=\"<projeto-da-cota>\"\npython3 tools/gsc_semanal.py --dias 7 --saida dados/gsc"
+        },
+        {
+          "rot": "Encabezado del resumo.csv",
+          "icone": "arquivo",
+          "conteudo": "inicio,fim,site,total_cliques,total_impr,marca_cliques,marca_impr,sem_marca_cliques,sem_marca_impr,anonimas_cliques,anonimas_impr,consultas_sem_marca"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "resumo.csv de inema.club",
+            "html": "<table><tr><th>semana</th><th>total</th><th>marca</th><th>sin marca</th><th>anónimas</th><th>consultas sin marca</th></tr><tr><td>16–22/09</td><td>104/437</td><td>79/245</td><td>0/8</td><td>25/184</td><td>3</td></tr><tr><td>24–30/09</td><td>77/820</td><td>57/220</td><td>0/54</td><td>20/546</td><td>29</td></tr><tr><td>27/09–03/10</td><td>87/817</td><td>68/288</td><td>0/55</td><td>19/474</td><td>36</td></tr><tr><td>28/09–04/10</td><td>77/708</td><td>60/253</td><td>0/47</td><td>17/408</td><td>30</td></tr><tr><td>05–11/10</td><td>114/702</td><td>87/238</td><td>0/157</td><td>27/307</td><td>51</td></tr></table><p>Clics/impresiones. Archivo real de inemaSEO (2026).</p>"
+          },
+          {
+            "rot": "resumo.csv de inema.pro",
+            "html": "<table><tr><th>semana</th><th>total</th><th>marca</th><th>sin marca</th><th>anónimas</th><th>consultas sin marca</th></tr><tr><td>16–22/09</td><td>6/112</td><td>4/61</td><td>0/5</td><td>2/46</td><td>2</td></tr><tr><td>24–30/09</td><td>2/198</td><td>1/67</td><td>0/8</td><td>1/123</td><td>4</td></tr><tr><td>27/09–03/10</td><td>5/232</td><td>4/98</td><td>0/15</td><td>1/119</td><td>9</td></tr><tr><td>28/09–04/10</td><td>4/201</td><td>4/89</td><td>0/14</td><td>0/98</td><td>8</td></tr><tr><td>05–11/10</td><td>11/761</td><td>5/116</td><td><b>2/293</b></td><td>4/352</td><td>52</td></tr></table>"
+          },
+          {
+            "rot": "Cómo leerlo",
+            "html": "<ul><li><b>inema.club</b>: impresiones sin marca de 8 a 157 y consultas sin marca de 3 a 51 en cuatro semanas.</li><li><b>Pero los clics sin marca de club siguen en 0.</b> Gente nueva está viendo el sitio; todavía no está haciendo clic.</li><li><b>inema.pro</b>: los 2 primeros clics sin marca en la semana del 05 al 11/10, de búsquedas como \"curso jev\".</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: dos semanas registradas",
+      "sub": "El E2 pide una semana de espera.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Regex y primera semana",
+          "min": "30 min",
+          "texto": "Afina la regex de la clase 1 con al menos 3 variaciones de la marca y errores de escritura que aparecen en tus consultas. Registra la primera semana, con el script o a mano.",
+          "pronto": "el resumen (CSV u hoja de cálculo) tiene la 1.ª fila con los tres grupos, y ninguna consulta con tu nombre quedó en el grupo sin marca."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Segunda semana y comparación",
+          "min": "20 min",
+          "dias": 7,
+          "texto": "Una semana después, el mismo día, registra la segunda fila y escribe una frase comparando el sin marca de las dos.",
+          "pronto": "hay dos filas sin días en común y una frase del tipo \"las impresiones sin marca pasaron de X a Y; los clics de A a B\"."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "Las impresiones sin marca de inema.club pasaron de 8 a 157 en cuatro semanas, y los clics sin marca se quedaron en 0. ¿Qué dice eso?",
+          "opcoes": [
+            "Que el SEO fracasó.",
+            "Que gente nueva empezó a ver el sitio en las búsquedas, pero todavía no hace clic: el siguiente paso es ver posición y título.",
+            "Que el panel está roto.",
+            "Que es hora de comprar anuncios."
+          ],
+          "certa": 1,
+          "explica": "La impresión sin marca es la primera señal. El clic depende de la posición y del título; es lo que atacan las clases 8 y 4.",
+          "ref": "codigo",
+          "cert": true
+        },
+        {
+          "p": "¿Por qué ejecutar la exportación siempre el mismo día de la semana?",
+          "opcoes": [
+            "Por superstición.",
+            "Para que las semanas no compartan días y la comparación sea justa.",
+            "Porque Google solo libera los datos los martes.",
+            "Para gastar menos cuota."
+          ],
+          "certa": 1,
+          "explica": "Las semanas superpuestas cuentan los mismos días dos veces. En INEMA, 27/09–03/10 y 28/09–04/10 comparten seis días.",
+          "ref": "passos"
+        },
+        {
+          "p": "No tienes credencial de Google Cloud. ¿Y ahora?",
+          "opcoes": [
+            "Abandonar la medición.",
+            "Pagar una herramienta.",
+            "Hacer la misma línea a mano en el panel, con el filtro de regex, 10 minutos por semana.",
+            "Pedirle la contraseña a alguien."
+          ],
+          "certa": 2,
+          "explica": "El script solo automatiza lo que muestra el panel. La hoja de cálculo hecha a mano tiene los mismos tres grupos.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿Qué guarda el archivo [data]_[site]_sem-marca.csv?",
+          "opcoes": [
+            "Solo el total.",
+            "Cada consulta sin marca con la página, clics, impresiones, CTR y posición.",
+            "Las consultas de marca.",
+            "Las contraseñas de Search Console."
+          ],
+          "certa": 1,
+          "explica": "Es la materia prima de las próximas clases: página con impresión y sin clic (clase 4) y consulta sin página dueña (clase 5).",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Una línea por semana",
+          "texto": "Mismo día, mismos grupos, un archivo que solo crece."
+        },
+        {
+          "t": "Primero impresión, después clic",
+          "texto": "Lo sin marca empieza por impresiones. En INEMA, 8 → 157 en cuatro semanas, con 0 clics en el club."
+        },
+        {
+          "t": "Script u hoja de cálculo",
+          "texto": "El gsc_semanal.py automatiza; sin credencial, el panel da el mismo número."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "gsc_semanal.py en GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/gsc_semanal.py",
+          "icone": "terminal"
+        },
+        {
+          "t": "Consultas anonimizadas: análisis de Google (inglés)",
+          "href": "https://developers.google.com/search/blog/2022/10/performance-data-deep-dive",
+          "icone": "lupa"
+        },
+        {
+          "t": "Método inemaSEO",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        }
+      ]
+    }
+  ]
+}

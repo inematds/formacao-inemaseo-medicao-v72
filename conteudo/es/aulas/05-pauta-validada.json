@@ -1,0 +1,260 @@
+{
+  "slug": "pauta-validada",
+  "num": 5,
+  "menu": "Lista de temas",
+  "titulo": "Consulta con impresión y sin página: tema validado",
+  "titulo_curto": "Tema validado",
+  "minutos": 17,
+  "lead": "Una herramienta de pago estima lo que la gente busca. Tu Search Console muestra lo que ya buscaron y en qué apareciste. Una consulta sin marca con impresión y sin una página hecha para ella es un tema validado gratis. En esta clase separas tema, página por mejorar y ruido, y escribes el briefing con un activo real.",
+  "objetivo": "convertir consultas sin marca con impresión y sin página dueña en una lista de temas de 5 páginas, cada una apoyada en un activo real.",
+  "competencias": [
+    "achar-pauta-no-search-console",
+    "decidir-pauta-ou-melhorar",
+    "escrever-briefing-com-ativo-real"
+  ],
+  "aprende": [
+    {
+      "t": "Qué es la página dueña de una consulta"
+    },
+    {
+      "t": "Tema nuevo, mejorar o ignorar"
+    },
+    {
+      "t": "Por qué cada tema necesita un activo real"
+    },
+    {
+      "t": "El briefing de una página nueva"
+    }
+  ],
+  "hero_alt": "Una mano sujeta tarjetas de papel en blanco en un tablero de corcho, junto a una laptop.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "De la consulta al tema",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "arquivo",
+          "titulo": "Archivo sin marca",
+          "sub": "de la semana",
+          "detalhe": "El archivo sin-marca de la clase 2 (o la pestaña Consultas del panel, con el filtro \"no coincide\" con la marca). Cada línea: consulta, página, impresiones, posición."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Juntar por consulta",
+          "sub": "sumar las páginas",
+          "detalhe": "La misma consulta puede aparecer con dos páginas. Suma las impresiones y guarda la mejor posición."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "¿Hay página dueña?",
+          "sub": "la pregunta",
+          "forte": true,
+          "detalhe": "La página dueña es la que se hizo para esa consulta: aparece en la primera página de Google para ella, o trata exactamente ese tema. Si no hay, la consulta no tiene casa."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "Lista de temas",
+          "sub": "sin dueña",
+          "detalhe": "La gente buscó y tú apareciste por casualidad con otra página. Escribe la página hecha para esa búsqueda, si tienes un activo real que la respalde."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Mejorar",
+          "sub": "dueña fuera de la parte superior",
+          "detalhe": "Ya existe la página correcta, pero está más allá de la primera página. No escribas otra: refuerza esa (secciones nuevas, enlaces internos, enlaces de vuelta)."
+        }
+      ],
+      "legenda": "Dos páginas para la misma búsqueda compiten entre sí. Antes de escribir, pregúntate si la dueña ya existe."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "De la lista al briefing",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "Filtrar",
+          "sub": "lo que es señal",
+          "texto": [
+            "Quédate con las consultas sin marca que tienen impresión y tienen sentido para tu negocio.",
+            "Una búsqueda que no tiene que ver contigo (un error, un nombre suelto) es ruido: ignórala."
+          ]
+        },
+        {
+          "titulo": "Clasificar",
+          "sub": "tema nuevo o mejorar",
+          "texto": [
+            "Para cada consulta, busca la página dueña en tu sitio.",
+            "Sin dueña: tema nuevo. Con dueña fuera de la parte superior: mejorar la dueña."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (semana del 05 al 11/10/2026)",
+            "texto": "Las consultas sin marca que más aparecieron eran en español: \"aprender ia\" (10 impresiones), \"aprender inteligencia artificial desde cero\" (10), \"cómo aprender ia\" (8). Todas caían en la página ES de aprender IA, entre las posiciones 29 y 61. Ya tenían dueña: el caso es mejorar, no escribir otra."
+          }
+        },
+        {
+          "titulo": "El activo real",
+          "sub": "la regla del método",
+          "texto": [
+            "Cada página nueva se apoya en un activo real: un curso, un proyecto, un experimento, un dato de tu negocio. Sin activo, el tema espera.",
+            "Eso es lo que hace que la página no sea una más igual a las demás."
+          ]
+        },
+        {
+          "titulo": "La compuerta",
+          "sub": "decide una persona",
+          "texto": [
+            "Una persona aprueba la lista antes de escribir. Máximo 5 páginas por vez.",
+            "Nada de 5 variaciones de la misma palabra: eso es contenido a escala y Google lo trata como spam."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "La lista de temas y el briefing",
+      "sub": "Modelos para copiar. Cambia lo que está entre < > por lo tuyo.",
+      "blocos": [
+        {
+          "rot": "Lista de temas de la semana (modelo)",
+          "icone": "lista",
+          "conteudo": "| consulta | impresiones | mejor posición | página dueña | decisión | activo real |\n|---|---|---|---|---|---|\n| <consulta> | <n> | <p> | <ninguna> | tema | <curso / proyecto / dato> |\n| <consulta> | <n> | <p> | </pagina/> | mejorar | - |\n| <consulta> | <n> | <p> | - | ignorar (ruido) | - |"
+        },
+        {
+          "rot": "Briefing de una página nueva (modelo)",
+          "icone": "caneta",
+          "conteudo": "Consulta objetivo: <consulta>\nIntención: <qué quiere resolver la persona>\nQué dice ya el top 10 y qué falta: <vacíos>\nDato propio obligatorio (el activo real): <curso, proyecto, número de tu negocio>\nEnlaces internos: <2 o 3 páginas antiguas que van a apuntar a la nueva>\nListo cuando: <la página responde a la intención con el dato propio y tiene 2 enlaces internos llegando>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Consultas sin marca de INEMA (05–11/10/2026)",
+            "html": "<table><tr><th>consulta</th><th>impr.</th><th>posición</th><th>página</th></tr><tr><td>aprender ia</td><td>10</td><td>34,5</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>aprender inteligencia artificial desde cero</td><td>10</td><td>33,2</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>cómo aprender ia</td><td>8</td><td>46,1</td><td>/es/aprender-inteligencia-artificial/</td></tr><tr><td>aprender inteligência artificial (PT)</td><td>0</td><td>-</td><td>sin impresiones en la semana</td></tr></table><p>Del informe semanal del 13/10/2026.</p>"
+          },
+          {
+            "rot": "Cómo leerlo",
+            "html": "<ul><li>Las consultas en ES ya tienen dueña: la decisión es <b>mejorar</b> la página en ES.</li><li>La consulta equivalente en PT tuvo 0 impresiones en la semana: aún no hay señal, así que no se crea una página nueva por ella.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: cinco temas con activo",
+      "sub": "Usa la semana más reciente de tu export.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · La lista clasificada",
+          "min": "40 min",
+          "texto": "Toma las 15 consultas sin marca con más impresiones y clasifica cada una en tema, mejorar o ignorar.",
+          "pronto": "la lista de temas tiene 15 filas con impresiones, mejor posición, página dueña (o \"ninguna\") y decisión."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Un briefing",
+          "min": "30 min",
+          "texto": "Elige el tema más fuerte que tenga activo real y completa el briefing.",
+          "pronto": "el briefing tiene consulta, intención, dato propio con nombre (curso, proyecto o número tuyo) y 2 páginas antiguas que van a enlazar a la nueva."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "Una consulta sin marca tiene impresiones y cae en una página tuya en la posición 45, hecha para ese tema. ¿Tema o mejorar?",
+          "opcoes": [
+            "Tema: escribir otra página.",
+            "Mejorar: la página dueña existe, solo está lejos de los primeros lugares.",
+            "Ignorar.",
+            "Borrar la página."
+          ],
+          "certa": 1,
+          "explica": "Escribir una segunda página para la misma búsqueda hace que las dos compitan entre sí. Refuerza la dueña.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Encontraste un buen tema, pero no tienes curso, proyecto ni dato tuyo sobre el asunto. ¿Qué haces?",
+          "opcoes": [
+            "Escribir de todos modos, con texto genérico.",
+            "Dejar el tema en espera hasta tener un activo real.",
+            "Copiar el primer resultado de Google.",
+            "Generar 5 versiones con IA."
+          ],
+          "certa": 1,
+          "explica": "El método solo publica páginas apoyadas en un activo real. Es lo que las diferencia de las demás.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿Por qué no publicar 5 variaciones de la misma palabra clave?",
+          "opcoes": [
+            "Porque da trabajo.",
+            "Porque es contenido a escala: Google lo trata como spam y las páginas compiten entre sí.",
+            "Porque Search Console no lo permite.",
+            "No hay problema."
+          ],
+          "certa": 1,
+          "explica": "Scaled content abuse. Y recuerda el caso de la clase 3: un lote de páginas parecidas no entró en el índice.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿De dónde viene el tema \"validado\" de esta clase?",
+          "opcoes": [
+            "De una estimación de volumen de una herramienta de pago.",
+            "De las consultas reales en las que tu sitio ya apareció en Search Console.",
+            "Del supuesto del redactor.",
+            "De las búsquedas de la competencia."
+          ],
+          "certa": 1,
+          "explica": "Validado porque alguien ya buscó y tú ya apareciste. El volumen exacto de búsqueda no existe gratis; esto sí existe.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Primero la página dueña",
+          "texto": "Si la dueña existe, mejórala. Si no existe, es tema para la lista."
+        },
+        {
+          "t": "Activo real",
+          "texto": "Sin curso, proyecto o dato tuyo, el tema espera."
+        },
+        {
+          "t": "La vara de 2026",
+          "texto": "La guía de Google para IA (mayo/2026) pide contenido no commodity: datos propios y experiencia directa. Es el mismo filtro del activo real."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Método inemaSEO: etapas 6 y 10",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Google: políticas de spam (contenido a escala)",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "icone": "escudo"
+        },
+        {
+          "t": "Curso 2: las páginas que solo tú puedes escribir",
+          "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}
