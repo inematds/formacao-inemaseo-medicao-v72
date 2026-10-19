@@ -3,14 +3,14 @@
   "lang": "en",
   "url": "https://inematds.github.io/formacao-inemaseo-medicao-v72/en/",
   "nome": "inemaSEO 3 — Measurement and Routine: the number that matters is the non-branded one",
-  "sub": "inemaSEO Program · course 3 of 6",
+  "sub": "inemaSEO Program · course 3 of 7",
   "volta": {
     "t": "inemaSEO Area",
     "href": "https://eventos.inema.pro/inemaseo/"
   },
   "lado_card": {
     "rot": "inemaSEO Program",
-    "t": "Course 3 of 6",
+    "t": "Course 3 of 7",
     "texto": "With your measurement routine in place, course 4 brings the same care to AIs: official citation dashboards, bots by purpose, and WebMCP as preparation.",
     "link": "Go to course 4",
     "href": "https://inematds.github.io/formacao-inemaseo-ias-v72/"
@@ -18,7 +18,7 @@
   "rodape": "INEMA.CLUB · open and free content · INEMA Learning format v7.2 · <a href=\"https://eventos.inema.pro/inemaseo/\">eventos.inema.pro/inemaseo</a> · <a href=\"https://github.com/inematds/inemaseo-metodo\">inemaSEO method (MIT)</a> · <a href=\"https://inema.club/\">inema.club</a>",
   "videos": {},
   "inicio": {
-    "kicker": "inemaSEO Program · course 3 of 6 · 8 lessons",
+    "kicker": "inemaSEO Program · course 3 of 7 · 8 lessons",
     "titulo": "Measurement and Routine: the number that matters is the non-branded one",
     "lead": "At the start, almost every click comes from people who already search for your name. In eight lessons, you separate the brand, read URL Inspection, decide when to change a title, turn queries into a topic list, test another language, set up the conversion goal, and build the routine with a Plan B. With INEMA's real numbers, including the zero.",
     "cta": "Start with lesson 1",
