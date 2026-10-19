@@ -136,7 +136,7 @@
         {
           "rot": "Terminal · siguiente paso: gsc-historico (inemaseo-sistemas)",
           "icone": "terminal",
-          "conteudo": "# importar a pasta do export semanal (reimportar não duplica)\npython3 gsc_historico.py importar <pasta-do-gsc_semanal> --db dados/gsc.sqlite\n\n# relatório de um site: semana atual × anterior\npython3 gsc_historico.py relatorio --db dados/gsc.sqlite --site <seusite.com> --saida saida/<seusite.com>"
+          "conteudo": "# importar la carpeta del export semanal (reimportar no duplica)\npython3 gsc_historico.py importar <carpeta-del-gsc_semanal> --db dados/gsc.sqlite\n\n# informe de un sitio: semana actual × anterior\npython3 gsc_historico.py relatorio --db dados/gsc.sqlite --site <seusite.com> --saida saida/<seusite.com>"
         }
       ],
       "saida": {
